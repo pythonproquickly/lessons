@@ -1,0 +1,15 @@
+-e .
+black
+mypy
+pytest
+pytest-cov
+pytest-bdd
+pytest-mock
+flake8
+pysnooper
+tox
+isort
+pygments
+sphinx
+
+loguru
