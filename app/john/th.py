@@ -1,4 +1,4 @@
-import pysnooper
+#import pysnooper
 
 
 def main():
