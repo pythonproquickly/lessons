@@ -9,7 +9,7 @@ def main():
     hanoi(n, source, spare, target)
 
 
-# @pysnooper.snoop()
+@pysnooper.snoop()
 def hanoi(n, source, spare, target):
     if n == 1:
         print("Move a disk from ", source, " to ", target)
