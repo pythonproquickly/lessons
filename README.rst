@@ -1,31 +1,4 @@
-.. These are examples of badges you might want to add to your README:
-   please update the URLs accordingly
-
-    .. image:: https://api.cirrus-ci.com/github/<USER>/andykmiles.svg?branch=main
-        :alt: Built Status
-        :target: https://cirrus-ci.com/github/<USER>/andykmiles
-    .. image:: https://readthedocs.org/projects/andykmiles/badge/?version=latest
-        :alt: ReadTheDocs
-        :target: https://andykmiles.readthedocs.io/en/stable/
-    .. image:: https://img.shields.io/coveralls/github/<USER>/andykmiles/main.svg
-        :alt: Coveralls
-        :target: https://coveralls.io/r/<USER>/andykmiles
-    .. image:: https://img.shields.io/pypi/v/andykmiles.svg
-        :alt: PyPI-Server
-        :target: https://pypi.org/project/andykmiles/
-    .. image:: https://img.shields.io/conda/vn/conda-forge/andykmiles.svg
-        :alt: Conda-Forge
-        :target: https://anaconda.org/conda-forge/andykmiles
-    .. image:: https://pepy.tech/badge/andykmiles/month
-        :alt: Monthly Downloads
-        :target: https://pepy.tech/project/andykmiles
-    .. image:: https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Twitter
-        :alt: Twitter
-        :target: https://twitter.com/andykmiles
-
-.. image:: https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
-    :alt: Project generated with PyScaffold
-    :target: https://pyscaffold.org/
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0776abb570de47bdaaf0666ebccba968)](https://www.codacy.com/gh/andykmiles/clients-ctpsws/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andykmiles/clients-ctpsws&amp;utm_campaign=Badge_Grade)
 
 |
 
