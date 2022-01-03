@@ -1,0 +1,16 @@
+Query type of SORTT invalid for query # 6
+Blank line in file
+1 {'select': ['B = 550'], 'display': ['Z'], 'type': 'FIND'}
+2 {'select': ['H > 95'], 'display': ['Z'], 'type': 'FIND'}
+3 {'select': ['J < 650'], 'display': ['Z'], 'type': 'FIND'}
+4 {'select': ['J < 650'], 'display': ['J E I'], 'type': 'FIND'}
+5 {'select': ['H > 49'], 'display': ['T S'], 'type': 'FIND'}
+6 {'type': 'ERROR'}
+7 {'select': ['Y'], 'display': ['T S'], 'type': 'FIND'}
+8 {'select': ['Y'], 'display': ['X'], 'type': 'FIND'}
+9 {'select': ['Y'], 'display': ['X T'], 'type': 'FIND'}
+10 {'select': ['Q < 50', 'T < 4', 'S > 45'], 'display': ['Z'], 'type': 'FIND'}
+11 {'select': ['Q < 50', 'T < 4', 'V = 300', 'S > 45'], 'display': ['Z'], 'type': 'FIND'}
+12 {'type': 'SORT', 'sort': 'Q = 1 '}
+13 {'type': 'SORT', 'sort': 'Q = -1 '}
+14 {'select': ['J < 800', 'J > 500'], 'display': ['Z'], 'type': 'FIND'}
