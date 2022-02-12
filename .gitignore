@@ -51,7 +51,3 @@ MANIFEST
 # Per-project virtualenvs
 .venv*/
 .conda*/
-venv*/
-data/
-*.sublime-*
-*.wp*

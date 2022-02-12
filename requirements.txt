@@ -1,1 +1,7 @@
 loguru
+flask
+flask-restful
+sqlalchemy
+requests
+bs4
+pymongo
