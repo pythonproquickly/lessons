@@ -5,7 +5,10 @@ R = 3960.8
 
 
 def get_input():
-    input_data = []
+    # these lines are commented to make testing easier
+    # lines 11-18 are the real code, 20-27 for api test, 28-44 for file test
+
+    """input_data = []
 
     for line in range(6):
         data = input()
@@ -13,7 +16,7 @@ def get_input():
         key = data[:key_ends]
         value = data[key_ends + 1 :]
         input_data.append([key, value])
-
+    """
     """input_data = [
         ["CENTER", "NOMINATIM Bren Hall, Irvine, CA"],
         ["RANGE", "30"],
@@ -52,7 +55,8 @@ def get_input():
         + input_data[4][1].split()[0]: " ".join(input_data[4][1].split()[1:]),
         input_data[5][0]
         + " "
-        + input_data[5][1].split()[0]: " ".join(input_data[5][1].split()[1:]),
+        # + input_data[5][1].split()[0]: " ".join(input_data[5][1].split()[1:]),
+        + input_data[5][1].split()[0]: input_data[5][2],
     }
     print(input_data)
     input()
@@ -107,9 +111,11 @@ def handle_input(input_data):
         # get from API
         pass
     if input_data.get("REVERSE FILES", None) is not None:
+        file_contents = []
         for file in input_data["REVERSE FILES"]:
             with open(file, "r", encoding="utf-8") as f:
-                input_data["REVERSE FILES"][1].append(list(json.load(f).items()))
+                file_contents.append(json.load(f))
+        input_data["REVERSE FILES"] = file_contents
     if input_data.get("REVERSE NOMINATIM", None) is not None:
         # get from API
         pass
