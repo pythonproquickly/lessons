@@ -1,0 +1,142 @@
+{
+  "id": "6ccc71a2-a371-41f5-8cf3-3de0f1f2c7ea",
+  "version": "2.0",
+  "name": "stubhub-3-select tickets by price",
+  "url": "https://www.stubhub.com",
+  "tests": [{
+    "id": "890fa2ac-0173-4861-b1c0-f654cb3f6a11",
+    "name": "stubhub_3_tickets_by_price",
+    "commands": [{
+      "id": "95e9b810-d95e-4fd1-8531-c3bd454a7a57",
+      "comment": "",
+      "command": "open",
+      "target": "/harlem-globetrotters-tour-fresno-tickets-2-24-2022/event/105023807/?sliderMin=140.11%2C73.40",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c384fbec-682a-4418-a068-01c80daedba6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "975aa91a-8f27-48ea-bafa-244b0065bb6d",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.price-slider__handle:nth-child(1) .price-slider__dot-handler",
+      "targets": [
+        ["css=.price-slider__handle:nth-child(1) .price-slider__dot-handler", "css:finder"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section[3]/div/span/div/section[2]/div/span/span/span", "xpath:idRelative"],
+        ["xpath=//span/span/span", "xpath:position"]
+      ],
+      "value": "11.800048828125,12"
+    }, {
+      "id": "ad4f8e40-5a20-467c-8f33-eaa8d938fbdd",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.price-slider__handle:nth-child(1) .price-slider__dot-handler",
+      "targets": [
+        ["css=.price-slider__handle:nth-child(1) .price-slider__dot-handler", "css:finder"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section[3]/div/span/div/section[2]/div/span/span/span", "xpath:idRelative"],
+        ["xpath=//span/span/span", "xpath:position"]
+      ],
+      "value": "11.800048828125,12"
+    }, {
+      "id": "9d64a8a0-8185-4974-b7fa-5bb41ae6154a",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.price-slider__handle:nth-child(1) .price-slider__dot-handler",
+      "targets": [
+        ["css=.price-slider__handle:nth-child(1) .price-slider__dot-handler", "css:finder"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section[3]/div/span/div/section[2]/div/span/span/span", "xpath:idRelative"],
+        ["xpath=//span/span/span", "xpath:position"]
+      ],
+      "value": "11.800048828125,12"
+    }, {
+      "id": "18750c37-7f23-4854-94e4-6712ed002fd7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.price-slider__handle:nth-child(1) .price-slider__dot-handler",
+      "targets": [
+        ["css=.price-slider__handle:nth-child(1) .price-slider__dot-handler", "css:finder"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section[3]/div/span/div/section[2]/div/span/span/span", "xpath:idRelative"],
+        ["xpath=//span/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f4099ce-a0f0-4959-81fa-37684b8762dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.LabeledOption:nth-child(2) .TogglePill__handle",
+      "targets": [
+        ["css=.LabeledOption:nth-child(2) .TogglePill__handle", "css:finder"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section[3]/div/span/div/section[3]/div/div[2]/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "176909d4-6f26-4fe7-829a-ae8aa9facffd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mapboxgl-canvas",
+      "targets": [
+        ["css=.mapboxgl-canvas", "css:finder"],
+        ["xpath=//div[@id='SeatMapMapbox']/div[2]/canvas", "xpath:idRelative"],
+        ["xpath=//canvas", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80114693-bdfe-4484-a3c0-1f9b47332898",
+      "comment": "",
+      "command": "click",
+      "target": "css=.RoyalTicketListPanel__6",
+      "targets": [
+        ["css=.RoyalTicketListPanel__6", "css:finder"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section/div/div/div/ul/li[7]", "xpath:idRelative"],
+        ["xpath=//li[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "700fcb23-67c1-4412-a4a3-3db596b34d53",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Learn more",
+      "targets": [
+        ["linkText=Learn more", "linkText"],
+        ["css=.affirm-modal-trigger", "css:finder"],
+        ["xpath=//a[contains(text(),'Learn more')]", "xpath:link"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section/div[2]/div/div/div[6]/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript:void(0)')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Learn more')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f339af2-4ac4-4427-86d2-43cb3606cc56",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Checkout",
+      "targets": [
+        ["linkText=Checkout", "linkText"],
+        ["css=.Button_pill", "css:finder"],
+        ["xpath=//a[contains(text(),'Checkout')]", "xpath:link"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section/div[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/checkout/review?currency=USD&event_id=105023807&ticket_id=1996744993&quantity_selected=2&gxo=1')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Checkout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dc22ed27-8cff-4bd7-bc21-ff8e90147297",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["890fa2ac-0173-4861-b1c0-f654cb3f6a11"]
+  }],
+  "urls": ["https://www.stubhub.com/"],
+  "plugins": []
+}

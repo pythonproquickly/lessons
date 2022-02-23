@@ -1,4 +1,4 @@
-import andykmiles.maryam.fred
+import src.clients_ctpsws.src.maryam.fred as x
 
-num = andykmiles.maryam.fred.a()
+num = x.addup(2, 3)
 print(num)
