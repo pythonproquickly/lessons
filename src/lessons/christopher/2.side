@@ -1,0 +1,147 @@
+{
+  "id": "29407044-a3af-49c5-bb97-ee7cc847296a",
+  "version": "2.0",
+  "name": "stubhub_add_tickets",
+  "url": "https://www.stubhub.com",
+  "tests": [{
+    "id": "2e74eccf-4dda-4646-8408-1af8cc22b3ae",
+    "name": "stubhub_add_tickets",
+    "commands": [{
+      "id": "6a97654e-2bc4-467a-babb-cdeb5f90c573",
+      "comment": "",
+      "command": "open",
+      "target": "/harlem-globetrotters-tour-loveland-tickets-3-13-2022/event/105001173/?byo=true&byo_qty=2&ticket_id=1993765887",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c53c798-f7bc-404a-8025-145c9de0dbcf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c250bdea-4909-45a9-9be2-707266291950",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Checkout",
+      "targets": [
+        ["linkText=Checkout", "linkText"],
+        ["css=.Button_pill", "css:finder"],
+        ["xpath=//a[contains(text(),'Checkout')]", "xpath:link"],
+        ["xpath=//main[@id='main']/div/div/div/div[2]/section/div[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/checkout/review?currency=USD&event_id=105001173&ticket_id=1993765887&quantity_selected=2&gxo=1')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Checkout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c543465-50f9-45ac-87e4-6808263207e3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.UIKIT-UIButton:nth-child(6)",
+      "targets": [
+        ["css=.UIKIT-UIButton:nth-child(6)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue as guest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d54fb69c-b85d-448f-ad8f-f54c1231ec81",
+      "comment": "",
+      "command": "click",
+      "target": "css=.input__with--sublabel",
+      "targets": [
+        ["css=.input__with--sublabel", "css:finder"],
+        ["xpath=//form/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25b33b6e-3872-4e3e-be9a-cc5f9c301c3a",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da0fc4a5-52cd-4671-b89c-7c5fc032d65e",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "crigney@regis.edu"
+    }, {
+      "id": "e4418849-70cb-42c2-86bb-077b1facac90",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form/div/div/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "016cc847-8da4-4184-8b08-4d25ed90410a",
+      "comment": "",
+      "command": "click",
+      "target": "id=phoneNumberInput",
+      "targets": [
+        ["id=phoneNumberInput", "id"],
+        ["css=#phoneNumberInput", "css:finder"],
+        ["xpath=//input[@id='phoneNumberInput']", "xpath:attributes"],
+        ["xpath=//form/div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1ce11c2-34ce-4703-a368-0a173b146b6c",
+      "comment": "",
+      "command": "type",
+      "target": "id=phoneNumberInput",
+      "targets": [
+        ["id=phoneNumberInput", "id"],
+        ["css=#phoneNumberInput", "css:finder"],
+        ["xpath=//input[@id='phoneNumberInput']", "xpath:attributes"],
+        ["xpath=//form/div[2]/div/div/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "(510) 555-1212"
+    }, {
+      "id": "d2264ab8-3654-45cd-b2e8-10d1de82b0d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.Guest-Login-button-group--continue",
+      "targets": [
+        ["css=.Guest-Login-button-group--continue", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue to payment')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5fb320b0-272d-474d-ac78-5d73a3ab071f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2e74eccf-4dda-4646-8408-1af8cc22b3ae"]
+  }],
+  "urls": ["https://www.stubhub.com/"],
+  "plugins": []
+}

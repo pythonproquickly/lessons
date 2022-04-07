@@ -1,0 +1,28 @@
+The final addition to our clothes store app will be some logic for bundling
+overstocked items into groups to sell at once. We would like to split our
+items by price and then pick three cheaper items and two more expensive items
+per bundle. Finally, we are going to promote the bundles which have a value
+greater than 100 dollars. For the first step, import the deque and namedtuple
+classes from the collections module and create a new deque called split_prices.
+
+Now that the deque has been created, for every clothes item in the
+overstock_items list, if the price if greater than 20 dollars than append the
+item to the front of split_prices, otherwise append it to the back of
+split_prices.
+
+To make the data easier to read and work with, create a namedtuple subclass c
+alled ClothesBundle. Set the typename to ClothesBundle and the field_names to
+bundle_items and bundle_price.
+
+This next step is a bit tricky. First, create an empty list called bundles.
+Use a loop to continue iterating as long as there are at least 5 elements left
+in split_prices. On each iteration, append a new ClothesBundle object to the
+bundles list. The ClothesBundle object will be created by making a bundle of
+three cheap items and two expensive items. This can be accomplished using list
+of items by popping from the back of split_prices three times and the popping
+from the front of split_prices two times. Use that list of clothes items as
+the bundle_items in theClothesBundle. Calculate the sum of the prices for the
+bundle and store that as the bundle_price in the ClothesBundle.
+
+
+grid , spe 10 x 6 read in to lists

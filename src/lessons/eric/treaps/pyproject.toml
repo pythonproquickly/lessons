@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "py_treaps"
+version = "0.1.0"
+description = "UT DSC 395T: Treaps"
+authors = ["Elvin Yang <eyang@cs.utexas.edu>"]
+
+[tool.poetry.dependencies]
+python = "^3.6.9"
+pytest = "^6.2.4"
+mypy = "^0.910"
+

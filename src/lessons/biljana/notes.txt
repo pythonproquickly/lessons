@@ -1,0 +1,2 @@
+ref https://subscription.packtpub.com/book/data/9781838987312/1/ch01lvl1sec03/dividing-text-into-sentences and
+https://www.holisticseo.digital/python-seo/nltk/tokenization
