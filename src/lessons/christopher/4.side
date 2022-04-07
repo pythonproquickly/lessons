@@ -1,0 +1,149 @@
+{
+  "id": "ef261f63-7565-4d6b-b26e-f823010a845c",
+  "version": "2.0",
+  "name": "buy tickets in cart",
+  "url": "https://www.stubhub.com",
+  "tests": [{
+    "id": "2b9b1ab7-6616-4a0a-9363-b52248c8d760",
+    "name": "stubhub_4_buy_tickets_in_cart",
+    "commands": [{
+      "id": "412fd58a-e8a7-46e3-a464-730468b32c0f",
+      "comment": "",
+      "command": "open",
+      "target": "/checkout/review?currency=USD&event_id=105023807&ticket_id=1997533267&quantity_selected=2&gxo=1&isNewGuest=true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07cc8c36-eda8-49e5-9a3a-41aeb40998c6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a529d28-2096-4ff3-928d-fa94b5621515",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0169f6bb-3791-4639-835f-c36ea8b5214a",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "crigney@regis.edu"
+    }, {
+      "id": "56a93d67-9cb0-4727-96a3-fd29acb8f2af",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=phoneNumberInput",
+      "targets": [
+        ["id=phoneNumberInput", "id"],
+        ["css=#phoneNumberInput", "css:finder"],
+        ["xpath=//input[@id='phoneNumberInput']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85d68c98-8c62-46cd-a882-beb13750641b",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.phone-number-group",
+      "targets": [
+        ["css=.phone-number-group", "css:finder"],
+        ["xpath=//form/div[2]/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d73028c-7227-4717-aeec-8e8d5e33bbcd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.phone-number-group",
+      "targets": [
+        ["css=.phone-number-group", "css:finder"],
+        ["xpath=//form/div[2]/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "132dac19-2c14-41a9-99ab-80e9f141d874",
+      "comment": "",
+      "command": "type",
+      "target": "id=phoneNumberInput",
+      "targets": [
+        ["id=phoneNumberInput", "id"],
+        ["css=#phoneNumberInput", "css:finder"],
+        ["xpath=//input[@id='phoneNumberInput']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "(510) 555-1212"
+    }, {
+      "id": "110aca6f-dd85-4fa8-acce-0712f34bb4d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.Guest-Login-button-group--continue",
+      "targets": [
+        ["css=.Guest-Login-button-group--continue", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[4]/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue to payment')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "760af3a9-77a7-42f0-aa83-b4df984104aa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.CTA__Btn",
+      "targets": [
+        ["css=.CTA__Btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='app-container']/div/div[2]/div[2]/div[2]/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add payment')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8a7a976-22c6-4d40-ae71-2e11aed32085",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-6:nth-child(2) .input-radio__label > div",
+      "targets": [
+        ["css=.col-md-6:nth-child(2) .input-radio__label > div", "css:finder"],
+        ["xpath=//div[2]/div/div/label/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bf7dba2-efc4-43f7-8aa5-70e4b1bc3e9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=svg",
+      "targets": [
+        ["css=svg", "css:finder"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8cfe431e-935b-4fbb-80ba-44e4b46c342a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2b9b1ab7-6616-4a0a-9363-b52248c8d760"]
+  }],
+  "urls": ["https://www.stubhub.com/"],
+  "plugins": []
+}
