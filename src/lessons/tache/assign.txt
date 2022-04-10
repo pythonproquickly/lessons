@@ -7,3 +7,7 @@ So the shell script needs to
 
 So for the first step I need to
 #list all repos in coligo `gh repo list coligo` Showing 297 of 297 repositories in @coligo: Then take a new list that has files that I dont want to make any changes too. Use that to parse out of the 297.... now I have the remaining files that I want to delete a particular file.
+
+gh repo list [<owner>] [flags]
+find /path/to/file/ | grep car | xargs ls -lh
+find /path/to/file/ | grep car | xargs rm -fr
