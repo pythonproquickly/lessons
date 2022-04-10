@@ -1,0 +1,161 @@
+SECRET IMAGE STEGANOGRAPHY
+In this program, you’ll be using steganography to hide a secret image inside of a cover image, without the cover image looking modified at all!
+
+The result looks like this:
+
+
+HOW IS THIS POSSIBLE?
+Information about each pixel of the secret image is encoded in the least significant bits or the lowest bits of each pixel in the cover image. More on this later.
+
+YOUR JOB:
+You will be writing two image filters.
+
+One filter encodes. It takes a pixel of the cover image and a pixel of the secret image, and encodes information about the secret pixel into the low bits of the cover pixel.
+
+The other filter decodes. It takes a pixel of the cover image, looks at the lowest bits of the cover pixel, and extracts the secret pixel from this information.
+
+YOUR JOB IS TO IMPLEMENT 2 FUNCTIONS:
+
+1. The encode_pixel function:
+"""
+ Encodes the given secret pixel into the low bits of
+ the RGB values of the given cover pixel.
+  R, G, and B value is set to a 0 or 1 depending
+  on the amount of R, G, and B in the
+  corresponding secret pixel. If an R, G, or B
+  value in the secret image is between 0 and 127,
+  set a 0, if it is between 128 and 255, set a 1.
+
+  Returns the modified cover pixel
+"""
+def encode_pixel(cover_pixel, secret_pixel):
+We want to set the lowest bit of the cover_pixel’s Red value to indicate some information about the secret_pixel’s Red value. Likewise for Green and Blue.
+
+If the secret_pixel has a high Red value (i.e. between 128 and 255), then the cover_pixel’s Red value should have its low bit set to a 1.
+
+If the secret_pixel has a low Red value (i.e. between 0 and 127), then the cover_pixel’s Red value should have its low bit set to a 0.
+
+The same process should happen for Green and Blue.
+
+You’ll want to write a set_lowest_bit function to take care of modifying bits (more on this in the HELPER FUNCTION section later).
+
+EXAMPLE:
+Suppose there is a function call encode_pixel(cover_pixel, secret_pixel) where
+
+cover_pixel = [34, 52, 202]
+secret_pixel = [200, 200, 30]
+We can’t encode the entire RGB values of secret_pixel into cover_pixel, but we can encode a single bit of information: ie is there a lot of this color in the secret pixel? yes, or no?
+
+So, secret_pixel has a lot of Red (R >= 128), a lot of Green (G >= 128) and a not very much Blue (B < 128). So we’ll encode a 1 for Red, 1 for Green, and a 0 for Blue: [1, 1, 0]
+
+To modify cover_pixel, we’ll set cover_pixel’s Red value to have a low bit of 1, we’ll set cover_pixel’s Green value to have a low bit of 1, and we’ll set cover_pixel’s Blue value to have a low bit of 0:
+
+coverPixel[RED] = set_lowest_bit(cover_pixel[RED], 1)
+coverPixel[GREEN] = set_lowest_bit(cover_pixel[GREEN], 1);
+coverPixel[BLUE] = set_lowest_bit(cover_pixel[BLUE], 0);
+This will change:
+cover_pixel[RED] from 34 to 35 to have a low bit of 1
+cover_pixel[GREEN] from 52 to 53 to have a low bit of 1
+cover_pixel[BLUE] will remain the same, since 202 already has a lowest bit of 0:
+
+3410 –> 3510 == 001000102 –> 001000112
+
+5210 –> 5310 == 001101002 –> 001101012
+
+20210 == 110010102
+
+So now we have:
+
+cover_pixel = [35, 53, 202]
+So we are only changing each value of the pixel by at most 1! That’s why the resulting cover image looks almost exactly the same. The difference is undetectable.
+
+The cover_pixel now encodes one bit of information for each color in the secret_pixel.
+
+2. The decode_pixel function:
+"""
+ Extracts the RGB values for a secret pixel from
+ the low bits of the given cover pixel.
+
+ If the low bit of the R, G, or B value
+ in the cover_pixel is a 1,
+ then the resulting secret pixel should
+ have that channel (R, G, or B)
+ set all the way to 255.
+
+ Input is an array of RGB values for a pixel.
+
+ Returns a tuple of RGB values for the decoded pixel
+"""
+def decode_pixel(cover_pixel):
+Now we’ll extract the secret_pixel out of an encoded cover_pixel!
+
+Information about the secret_pixel’s Red value is encoded in the lowest bit of the cover_pixel’s Red value. Likewise for Green and Blue.
+
+We need to access the lowest bit for each value. You’ll want to implement a get_lowest_bit function to help access the low bit (more on this in the HELPER FUNCTION section later).
+
+If the lowest bit of the cover_pixel’s Red value is a 1, then the secret_pixel’s Red value should be set all the way up to 255. If the lowest bit of the cover_pixel’s Red value is a 0, then the secret_pixel’s Red value should be set to 0.
+Same for Green and Blue.
+
+EXAMPLE:
+Suppose there is a function call to decode_pixel(cover_pixel) where cover_pixel is:
+
+cover_pixel = [35, 53, 202]
+Then looking at the lowest bits of each value:
+Red: 3510 = 001000112
+Green: 5310 = 001101012
+Blue: 20210 = 110010102
+
+red_bit = get_lowest_bit(cover_pixel[RED]);     // red_bit is 1
+green_bit = get_lowest_bit(cover_pixel[GREEN]); // green_bit is 1
+blue_bit = get_lowest_bit(cover_pixel[BLUE]);   // blue_bit is 0
+We have a 1 for Red, 1 for Green, and 0 for Blue.
+
+Our low bit values are [1, 1, 0].
+
+But that is an incredibly dark pixel. You can’t see the difference between a 1 and a 0 in an image.
+
+To fix this, multiply each of these values by 255 to get the resulting secret_pixel:
+[255, 255, 0].
+
+And this is the value that should be returned!
+
+cover_pixel = [35, 53, 202]
+cover_pixel_low_bits = [1, 1, 0]
+
+secret_pixel = [255, 255, 0]  // This should be returned
+So the secret_pixel [255, 255, 0] was decoded from the cover_pixel!
+
+HELPER FUNCTIONS
+It will be very helpful to implement the following helper functions:
+
+The is_even function
+# Returns true if the given value is even, false otherwise
+def is_even(value):
+HINT: all even values have a remainder of 0 after dividing by 2, while all odd values have a remainder of 1 after dividing by 2.
+
+The get_lowest_bit function
+"""
+ Given a number, return the lowest bit in
+ the binary representation of the number.
+
+ Returns either a 0 or a 1
+"""
+def get_lowest_bit(value):
+HINT: What is true about all binary numbers that end with a 0? What is true about all binary numbers that end with a 1? Think about even/odd…
+
+The set_lowest_bit function
+"""
+ Given a number, return a new number with the same underlying bits
+ except the lowest bit is set to the given bit_value.
+"""
+def set_lowest_bit(value, bit_value):
+HINT: There are 2 cases: we want to set the lowest bit to a 0, or a 1
+
+If we want to set a low bit of 0, there are 2 cases: the value is even or odd.
+
+If the value is even, the low bit is already 0!
+If the value is odd, we can subtract 1 to set the low bit to a 0 (e.g. 510 = 101 2, subtract 1 to get 410 = 1002)
+If we want to set a low bit of 1, there are 2 cases: the value is even or odd.
+
+If the value is odd, the low bit is already 1!
+If the value is even, we can add 1 to set the low bit to a 1 (e.g. 410 = 1002, add one to get 510 = 1012)

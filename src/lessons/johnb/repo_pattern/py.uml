@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#/home/andy/ws/ctpsws-clients/lessons/src/lessons/johnb/repo_pattern/repo.py</OriginalElement>
+  <nodes>
+    <node x="158.5" y="162.0">BaseException</node>
+    <node x="0.0" y="324.0">src.lessons.johnb.repo_pattern.repo.StoreException</node>
+    <node x="1570.1454545454544" y="162.0">src.lessons.johnb.repo_pattern.repo.User</node>
+    <node x="553.875" y="162.0">src.lessons.johnb.repo_pattern.repo.Store</node>
+    <node x="787.1136363636365" y="243.0">src.lessons.johnb.repo_pattern.repo.AnimalStore</node>
+    <node x="333.7363636363636" y="243.0">src.lessons.johnb.repo_pattern.repo.UserStore</node>
+    <node x="675.25" y="0.0">typing.Hashable</node>
+    <node x="178.5" y="243.0">Exception</node>
+    <node x="717.25" y="81.0">object</node>
+    <node x="1130.6409090909092" y="162.0">src.lessons.johnb.repo_pattern.repo.Animal</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="src.lessons.johnb.repo_pattern.repo.User" target="object" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1761.6454545454544" y="137.0" />
+      <point x="761.25" y="137.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="src.lessons.johnb.repo_pattern.repo.Store" target="object" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="749.375" y="137.0" />
+      <point x="761.25" y="137.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="object" target="typing.Hashable" relationship="INTERFACE">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="src.lessons.johnb.repo_pattern.repo.StoreException" target="Exception" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="src.lessons.johnb.repo_pattern.repo.Animal" target="object" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1332.6409090909092" y="137.0" />
+      <point x="761.25" y="137.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="src.lessons.johnb.repo_pattern.repo.UserStore" target="src.lessons.johnb.repo_pattern.repo.Store" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="548.2363636363636" y="218.0" />
+      <point x="749.375" y="218.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="src.lessons.johnb.repo_pattern.repo.AnimalStore" target="src.lessons.johnb.repo_pattern.repo.Store" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1012.1136363636365" y="218.0" />
+      <point x="749.375" y="218.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="Exception" target="BaseException" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="BaseException" target="object" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="238.5" y="137.0" />
+      <point x="761.25" y="137.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6853582554517134" showDependencies="false" x="1239.5" y="177.5" />
+  <SelectedNodes>
+    <node>src.lessons.johnb.repo_pattern.repo.User</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+
