@@ -1,7 +1,7 @@
 import turtle
 
 screen = turtle.Screen()
-screen.setup(800, 800)
+screen.setup(1000, 800)
 screen.title("Tic Tac Toe")
 screen.setworldcoordinates(-5, -5, 5, 5)
 screen.bgcolor('light gray')
