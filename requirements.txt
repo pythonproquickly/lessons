@@ -6,7 +6,6 @@ requests~=2.27.1
 bs4~=0.0.1
 pymongo~=4.0.2
 
-PyPDF2~=1.26.0
 PySnooper~=1.1.0
 sevseg~=0.1.0
 Bext~=0.0.8

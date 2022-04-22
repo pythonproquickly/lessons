@@ -1,0 +1,52 @@
+{
+    "id": "c637b8ec-a0c3-4776-bdf9-3d7b516c5edf",
+    "actor": {
+        "objectType": "Agent",
+        "name": "Urban Forsberg",
+        "mbox": "mailto:uforsberg@fake.ji"
+    },
+    "verb": {
+        "id": "http://adlnet.gov/expapi/verbs/scored",
+        "display": {
+            "en-US": "scored"
+        }
+    },
+    "object": {
+        "objectType": "Activity",
+        "id": "http://jeffersoneducation.org/learners-objectives/2.12.k Sufficiently proficient in written English to produce clear and coherent FRAGO�s/warning orders, situational reports and other written products. Sufficiently proficient in oral English to conduct daily Commander�s update briefings.",
+        "definition": {
+            "name": {
+                "und": "2.12.k Sufficiently proficient in written English to produce clear and coherent FRAGO�s/warning orders, situational reports and other written products. Sufficiently proficient in oral English to conduct daily Commander�s update briefings."
+            },
+            "type": "http://adlnet.gov/expapi/activities/objective"
+        }
+    },
+    "result": {
+        "score": {
+            "raw": 50,
+            "scaled": 0.5
+        }
+    },
+    "context": {
+        "team": {
+            "objectType": "Group",
+            "account": {
+                "name": "NFOR MCC",
+                "homePage": "http://jeffersoneducation.org"
+            }
+        },
+        "extensions": {
+            "parent": "Conduct ongoing operations"
+        }
+    },
+    "timestamp": "2022-04-03T13:30:00.000Z",
+    "stored": "2022-04-08T12:51:54.2069Z",
+    "authority": {
+        "objectType": "Agent",
+        "account": {
+            "name": "Exonaut",
+            "homePage": "http://Exonaut.jeffersoneducation.org"
+        }
+    },
+    "version": "1.0.0"
+}
