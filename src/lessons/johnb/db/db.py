@@ -1,7 +1,10 @@
 """
 show simplest database operation
 """
+from loguru import logger
 
+logger.DEBUG("jjjjjj")
+logger.INFO("KKK")
 import sqlite3
 
 sql_statements = [
@@ -12,22 +15,22 @@ sql_statements = [
     "insert into test values (3, 'xyz')",
 ]
 
-sql = input("which record number?: ")
-full_sql = "select id, name from test where id = " + sql
-sql_statements.append(full_sql)
-print(sql_statements[-1])
-
 
 def main():
     """ run the sql """
+    sql = input("which record number?: ")
+    full_sql = "select id, name from test where id = " + sql
+    sql_statements.append(full_sql)
     conn = sqlite3.connect("dbms.db")
     c = conn.cursor()
     [c.execute(statement) for statement in sql_statements[:-1]]
     conn.commit()
-    rows = c.execute(sql_statements[-1])
+    """rows = c.execute(sql_statements[-1])
     print(list(rows))
-    # rows = c.execute("select id, name from test where id = ?;", (2,))
-    # print(list(rows))
+    print(sql_statements[-1])"""
+    s = int(sql)
+    rows = c.execute("select id, name from test where id = ?;", (s,))
+    print(list(rows))
     c.close()
     conn.close()
 
