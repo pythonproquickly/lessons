@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  9 19:09:01 2022
-
-@author: gshriivanth
-"""
 import random
 import sys
 
@@ -33,7 +26,7 @@ def populate_grid(word, grid, turn):
     return grid
 
 
-def change_cell_background_color(color_grid, grid, guess, word, turn):
+def change_cell_background_color(color_grid, guess, word, turn):
     row = list(color_grid[turn - 1])
     row = [char for char in row if char != ' ']
     for i in range(WORD_LENGTH):
@@ -41,7 +34,6 @@ def change_cell_background_color(color_grid, grid, guess, word, turn):
             row[i] = "G"
         elif guess[i] in word:
             row[i] = "Y"
-
     row = ' '.join(row)
     color_grid[turn - 1] = row
     return color_grid
@@ -127,7 +119,7 @@ def run_wordle():
 
             sys.exit()
 
-        color_grid = change_cell_background_color(color_grid, grid, guess,
+        color_grid = change_cell_background_color(color_grid, guess,
                                                   secret_word, turn)
 
         letters_used = display_letters_used(letters_used, guess)
