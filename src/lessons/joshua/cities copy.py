@@ -29,4 +29,6 @@ while True:
         print("That can't be a favorite city")
         continue
     break
-print(f"Your favorite city is {your_favorite_city}")
+print(f"Your favorite city is {your_favorite_city}. It is located in {cities[your_favorite_city]['continent']}"
+      f" and has a population of {cities[your_favorite_city]['population']}. "
+      f"The language spoken is {cities[your_favorite_city]['language']}")
