@@ -13,26 +13,28 @@ player_score = 100
 player_guesses = 10
 x = random.randint(1, 100)
 print(x)
-print(
-    f"Your score is now {player_score} and you have {player_guesses} guesses left")
+print(f"Your score is now {player_score} and you have {player_guesses} guesses left")
 for guess in range(player_guesses):
     while player_score > 0:
-        guess1 = int(input(
-            "Guess a number between 1 and 100. Note: every incorrect guess subtracts 10 from your score: "))
+        guess1 = int(
+            input(
+                "Guess a number between 1 and 100. Note: every incorrect guess subtracts 10 from your score: "
+            )
+        )
         if guess1 == x:
             print(
-                f"You have won!! What are the odds of that?? your score is {player_score} ")
+                f"You have won!! What are the odds of that?? your score is {player_score} "
+            )
             break
         else:
             print("That is not the number we are looking for")
             player_score -= 10
             player_guesses -= 1
-    print(
-        f"You have {player_guesses} guesses left and your score is {player_score}")
+    print(f"You have {player_guesses} guesses left and your score is {player_score}")
 
     print(f"your score in this round: {player_score}")
     play_again = input("would you like to play again? (y/n): ")
-    if play_again == 'y':
+    if play_again == "y":
         continue
     else:
         break

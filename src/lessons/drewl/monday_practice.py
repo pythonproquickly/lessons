@@ -51,7 +51,8 @@ while i < len(statement):
 
 
 # print(spaces, len(spaces))
-positions = f"\nThere are {len(spaces)} in the sentance."\
+positions = (
+    f"\nThere are {len(spaces)} in the sentance."
     f"\nThey are located at positions:{spaces}"
+)
 print(positions)
-

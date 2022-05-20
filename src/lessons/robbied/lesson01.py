@@ -12,14 +12,12 @@ for code, country in countries.items():
 print(countries.items())
 
 
-
 people = {
-            ('andy', 'miles'): {'age': 42, 'favcol': 'green'},
-            ('fred', 'blogs'): {'age': 33, 'favcol': 'red'},
+    ("andy", "miles"): {"age": 42, "favcol": "green"},
+    ("fred", "blogs"): {"age": 33, "favcol": "red"},
 }
 
 
 peoples_fav_cols = {}
 
-print(people[('andy', 'miles')])
-
+print(people[("andy", "miles")])

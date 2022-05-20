@@ -16,6 +16,6 @@ def calculate(f, lhs, rhs):
 
 print(calculate(subtract, 7, 3))
 
-data = {'quantity': addup}
+data = {"quantity": addup}
 
-data['quantity'](1, 2)
+data["quantity"](1, 2)

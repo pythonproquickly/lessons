@@ -211,4 +211,4 @@ class Treap(ABC, Generic[KT, VT], Iterable):
 
 
 treap = Treap()
-assert (isinstance(treap, Treap))
+assert isinstance(treap, Treap)

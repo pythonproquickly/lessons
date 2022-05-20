@@ -15,7 +15,7 @@ def main():
         for row in game:
             print(row)
         while True:
-            move_col = int(input("Enter your move (column): ")) -1
+            move_col = int(input("Enter your move (column): ")) - 1
             drop_or_pop = input("Enter drop or pop: ")
             if not (0 <= move_col <= size_of_board[0] - 1):
                 print(f"Column must be between 1 & {size_of_board[0]}")

@@ -7,5 +7,5 @@ redditFile.close()
 
 soup = BeautifulSoup(redditHtml)
 redditAll = soup.find_all("a")
-for links in soup.find_all('a'):
-    print(links.get('href'))
+for links in soup.find_all("a"):
+    print(links.get("href"))

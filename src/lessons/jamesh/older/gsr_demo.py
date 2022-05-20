@@ -3,7 +3,6 @@ import math
 import numpy
 
 
-
 def gsr(l):
     rng = numpy.random.default_rng()
     gsr_shuffled = []
@@ -12,7 +11,7 @@ def gsr(l):
     # with p = 0.5
     cards_to_grab = rng.binomial(total_cards, 0.5)
     # print(f"Cards to grab: {cards_to_grab}")
-    left = list(l[: cards_to_grab])
+    left = list(l[:cards_to_grab])
     # print(left)
     right = list(l[cards_to_grab:])
     # print(right)
@@ -36,12 +35,14 @@ def top_to_random(l):
     top_to_random_shuffled.insert(random.randint(0, original_length - 1), top_card)
     return top_to_random_shuffled
 
+
 def test_order(i, j, l):
     if l.index(i) < l.index(j):
         return True
 
     else:
         return False
+
 
 def num_trials(err, prob):
     # Chebyshev's looks like this:
@@ -59,8 +60,9 @@ def num_trials(err, prob):
     # P(X >= a) <= E[X] / a
     # lectures says that from Markov, we get:
     # P(X >= t * E[X]) <= 1 / t
-    trials = math.floor(1 / (4 * err ** 2 * prob)) + 1
+    trials = math.floor(1 / (4 * err**2 * prob)) + 1
     return trials
+
 
 def gsr_order_prob(n, k, i, j, err, prob):
     # n = number of cards in deck
@@ -81,9 +83,9 @@ def gsr_order_prob(n, k, i, j, err, prob):
         list_of_results += [test_order(i, j, shuffled_deck)]
         number_of_trials = number_of_trials - 1
 
-
     print(list_of_results.count(True))
     return sum(list_of_results) / len(list_of_results)
+
 
 def top_to_random_order_prob(n, k, i, j, err, prob):
     top_to_random_list = list(range(n))
@@ -101,6 +103,7 @@ def top_to_random_order_prob(n, k, i, j, err, prob):
 
     print(list_of_results.count(True))
     return sum(list_of_results) / len(list_of_results)
+
 
 def main():
     input_list = range(52)

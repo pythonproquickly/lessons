@@ -21,20 +21,20 @@ def display_grid(grid):
 
 def populate_grid(word, grid, turn):
     word = list(word)
-    word = ' '.join(word)
+    word = " ".join(word)
     grid[turn - 1] = word
     return grid
 
 
 def change_cell_background_color(color_grid, guess, word, turn):
     row = list(color_grid[turn - 1])
-    row = [char for char in row if char != ' ']
+    row = [char for char in row if char != " "]
     for i in range(WORD_LENGTH):
         if guess[i] == word[i]:
             row[i] = "G"
         elif guess[i] in word:
             row[i] = "Y"
-    row = ' '.join(row)
+    row = " ".join(row)
     color_grid[turn - 1] = row
     return color_grid
 
@@ -80,8 +80,10 @@ def populate_word_bank():
     # source of words:  https://github.com/dwyl/english-words/
     # written by Andy Miles
     try:
-        with open('/Users/andy/ws/ctpsws-clients/lessons/src/lessons/shriivanthg/project/words_alpha.txt',
-                  'r') as w:
+        with open(
+            "/Users/andy/ws/ctpsws-clients/lessons/src/lessons/shriivanthg/project/words_alpha.txt",
+            "r",
+        ) as w:
             words = w.readlines()
 
     except FileNotFoundError:
@@ -119,8 +121,7 @@ def run_wordle():
 
             sys.exit()
 
-        color_grid = change_cell_background_color(color_grid, guess,
-                                                  secret_word, turn)
+        color_grid = change_cell_background_color(color_grid, guess, secret_word, turn)
 
         letters_used = display_letters_used(letters_used, guess)
         print(f"letters used: {letters_used}")

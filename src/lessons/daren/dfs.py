@@ -6,7 +6,7 @@ dim = 10
 
 def display_grid():
     for row in grid:
-        print('   ', *row)
+        print("   ", *row)
 
 
 # Returns the number of shapes we have discovered and "coloured".
@@ -67,25 +67,25 @@ def nb_of_spikes_for_shape(colour):
 
 
 try:
-    for_seed, density = (int(x) for x in
-                         input('Enter two integers, the second '
-                               'one being strictly positive: '
-                               ).split()
-                         )
+    for_seed, density = (
+        int(x)
+        for x in input(
+            "Enter two integers, the second " "one being strictly positive: "
+        ).split()
+    )
     if density <= 0:
         raise ValueError
 except ValueError:
-    print('Incorrect input, giving up.')
+    print("Incorrect input, giving up.")
     sys.exit()
 
 seed(for_seed)
-grid = [[int(randrange(density) != 0) for _ in range(dim)]
-        for _ in range(dim)
-        ]
-print('Here is the grid that has been generated:')
+grid = [[int(randrange(density) != 0) for _ in range(dim)] for _ in range(dim)]
+print("Here is the grid that has been generated:")
 display_grid()
 nb_of_shapes = colour_shapes()
-print('The maximum number of spikes of some shape is:',
-      max_number_of_spikes(nb_of_shapes))
+print(
+    "The maximum number of spikes of some shape is:", max_number_of_spikes(nb_of_shapes)
+)
 nb_of_shapes = colour_shapes()
 display_grid()

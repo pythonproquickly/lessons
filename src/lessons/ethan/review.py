@@ -10,5 +10,3 @@
 9) tuples and dictionaries
 10) algorithms: search, sort - big o
 """
-
-

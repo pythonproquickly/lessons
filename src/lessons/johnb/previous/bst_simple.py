@@ -9,14 +9,14 @@ class TreapNode:
         self.right = right
 
 
-''' Function to left-rotate a given treap
+""" Function to left-rotate a given treap
 
 	  r                       r
 	 / \     Left Rotate     / \
 	l   r       ———>        r   y
 	   / \                     / \
 	  x   y                   l   x
-'''
+"""
 
 
 def rotate_left(root):
@@ -29,14 +29,14 @@ def rotate_left(root):
     return r
 
 
-''' Function to right-rotate a given treap
+""" Function to right-rotate a given treap
 
 		r                        l
 	   / \     Right Rotate     / \
 	  l   r       ———>         x   r
 	 / \                          / \
 	x   y                        y   r
-'''
+"""
 
 
 def rotate_right(root):
@@ -103,12 +103,12 @@ def print_treap(root, space):
     space += height
     print_treap(root.right, space)
     for i in range(height, space):
-        print(' ', end='')
+        print(" ", end="")
     print((root.data, root.priority))
     print_treap(root.left, space)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     keys = [5, 2, 1, 4, 9, 8, 10]
     root = None
     for key in keys:

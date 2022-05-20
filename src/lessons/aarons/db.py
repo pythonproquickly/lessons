@@ -15,7 +15,7 @@ sql_statements = (
 
 
 def main():
-    """ run the sql """
+    """run the sql"""
     conn = sqlite3.connect("dbms.db")
     c = conn.cursor()
     [c.execute(statement) for statement in sql_statements]

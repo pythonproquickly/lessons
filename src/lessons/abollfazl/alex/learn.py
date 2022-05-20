@@ -12,5 +12,3 @@ for question in questions:
 print(answers)
 
 print(questions[0], answers[0])
-
-

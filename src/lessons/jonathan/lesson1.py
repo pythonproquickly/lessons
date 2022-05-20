@@ -30,6 +30,3 @@ while True:
     break
 
 print("Game over")
-
-
-

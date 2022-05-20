@@ -28,7 +28,7 @@ def display_grid(grid):
 
 def populate_grid(word, grid, turn):
     word = list(word)
-    word = ' '.join(word)
+    word = " ".join(word)
     grid[turn - 1] = word
     return grid
 
@@ -41,7 +41,7 @@ def change_cell_background_color(color_grid, grid, guess, word, turn):
             row[i] = "G"
         elif guess[i] in word:
             row[i] = "Y"
-    row = ''.join(row)
+    row = "".join(row)
     color_grid[turn] = row
     return color_grid
 
@@ -83,8 +83,7 @@ def display_letters_used(letters_used, guess):
 def populate_word_bank():
     # source of words:  https://github.com/dwyl/english-words/
     # written by Andy Miles
-    with open('words_alpha.txt',
-              'r') as w:
+    with open("words_alpha.txt", "r") as w:
         words = w.readlines()
 
     five_chars = [word.strip() for word in words if len(word.strip()) == 5]
@@ -116,8 +115,9 @@ def run_wordle():
             else:
                 print("You Lose")
             sys.exit()
-        color_grid = change_cell_background_color(color_grid, grid, guess,
-                                                  secret_word, turn)
+        color_grid = change_cell_background_color(
+            color_grid, grid, guess, secret_word, turn
+        )
 
         letters_used = display_letters_used(letters_used, guess)
         print(f"letters used: {letters_used}")

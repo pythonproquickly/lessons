@@ -5,7 +5,7 @@ from PyPDF2 import PdfFileReader
 
 def extract_information(pdf_path):
     doc = []
-    with open(pdf_path, 'rb') as f:
+    with open(pdf_path, "rb") as f:
         pdf = PdfFileReader(f)
         information = pdf.getDocumentInfo()
         number_of_pages = pdf.getNumPages()
@@ -30,9 +30,9 @@ def extract_information(pdf_path):
     return information
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     paths = [
-        '/home/andy/ws/ctpsws/lessons/wm2.pdf',
+        "/home/andy/ws/ctpsws/lessons/wm2.pdf",
     ]
     for path in paths:
         extract_information(path)

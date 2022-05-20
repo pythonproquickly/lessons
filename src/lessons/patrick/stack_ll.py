@@ -2,6 +2,7 @@
 # deque
 # queue
 
+
 class Stack:
     def __init__(self, the_stack):
         self.the_stack = the_stack

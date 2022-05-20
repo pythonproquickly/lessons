@@ -3,9 +3,9 @@ import pprint
 
 pp = pprint.PrettyPrinter(indent=2, compact=True)
 
-FILE_PATH = '/home/andy/data/json/'
+FILE_PATH = "/home/andy/data/json/"
 
-with open(f'{FILE_PATH}sample.json') as f:
+with open(f"{FILE_PATH}sample.json") as f:
     document = json.load(f)
 pp.pprint(document)
 print()

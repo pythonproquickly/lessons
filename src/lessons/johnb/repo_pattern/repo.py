@@ -1,10 +1,10 @@
 import sqlite3
 
-DATA_PATH = '/home/andy/data/'
+DATA_PATH = "/home/andy/data/"
 
 
 def get_connection():
-    return sqlite3.connect(f'{DATA_PATH}test.sqlite')
+    return sqlite3.connect(f"{DATA_PATH}test.sqlite")
 
 
 class StoreException(Exception):
@@ -13,17 +13,17 @@ class StoreException(Exception):
         self.errors = errors
 
 
-class User():
+class User:
     def __init__(self, name):
         self.name = name
 
 
-class Animal():
+class Animal:
     def __init__(self, name):
         self.name = name
 
 
-class Store():
+class Store:
     def __init__(self):
         try:
             self.conn = get_connection()
@@ -58,38 +58,36 @@ class Store():
 
 
 class UserStore(Store):
-
     def add_user(self, user):
         try:
             c = self.conn.cursor()
             # this needs an appropriate table
-            c.execute('INSERT INTO user (name) VALUES(?)', (user.name,))
+            c.execute("INSERT INTO user (name) VALUES(?)", (user.name,))
         except Exception as e:
-            raise StoreException('error storing user')
+            raise StoreException("error storing user")
 
 
 class AnimalStore(Store):
-
     def add_animal(self, animal):
         try:
             c = self.conn.cursor()
             # this needs an appropriate table
-            c.execute('INSERT INTO animal (name) VALUES(?)', (animal.name,))
+            c.execute("INSERT INTO animal (name) VALUES(?)", (animal.name,))
         except Exception as e:
-            raise StoreException('error storing animal')
+            raise StoreException("error storing animal")
 
 
 def repo_demo():
     try:
         with UserStore() as user_store:
-            user_store.add_user(User('John'))
+            user_store.add_user(User("John"))
             user_store.complete()
 
         with AnimalStore() as animal_store:
-            animal_store.add_animal(Animal('Dog'))
-            animal_store.add_animal(Animal('Pig'))
-            animal_store.add_animal(Animal('Cat'))
-            animal_store.add_animal(Animal('Wolf'))
+            animal_store.add_animal(Animal("Dog"))
+            animal_store.add_animal(Animal("Pig"))
+            animal_store.add_animal(Animal("Cat"))
+            animal_store.add_animal(Animal("Wolf"))
             animal_store.complete()
     except StoreException as e:
         print(e)

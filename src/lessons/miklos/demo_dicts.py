@@ -33,5 +33,5 @@ booking = {
 
 for field_name, field_details in booking.items():
     field_details["value"] = input(field_details["prompt"])
-    isvalid = field_details['validation_function'](field_details["value"])
+    isvalid = field_details["validation_function"](field_details["value"])
     print(isvalid)

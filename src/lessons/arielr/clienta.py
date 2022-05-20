@@ -7,10 +7,10 @@ http_server = sys.argv[1]
 conn = httplib.HTTPConnection(http_server)
 
 while 1:
-    cmd = raw_input('input command (ex. GET index.html): ')
+    cmd = raw_input("input command (ex. GET index.html): ")
     cmd = cmd.split()
 
-    if cmd[0] == 'exit':  # tipe exit to end it
+    if cmd[0] == "exit":  # tipe exit to end it
         break
 
         # request command to server
@@ -24,4 +24,4 @@ while 1:
     data_received = rsp.read()
     print(data_received)
 
-conn.close()  
+conn.close()

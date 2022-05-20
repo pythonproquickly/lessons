@@ -17,7 +17,7 @@ def stand(stand_on_value, stand_on_soft, cards):
 
 
 def print_arg_error():
-    print(  
+    print(
         "usage: blackjack.py <num-simulations> <stand-on-value (1-20)>"
         " <'soft'|'hard'>'"
     )

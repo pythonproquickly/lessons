@@ -24,4 +24,5 @@ def bubble_sort(array):
             break
     return array
 
-bubble_sort([3,2,1])
+
+bubble_sort([3, 2, 1])

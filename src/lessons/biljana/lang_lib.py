@@ -36,19 +36,20 @@ PATH = r"/home/andy/"
 OUTPUT_PATH = r"/home/andy/tmp/"
 pattern = re.compile("Project No\. [0-9]*")
 
-LOG_DIR = './logs/'
+LOG_DIR = "./logs/"
 logger.remove()
 
-info_filter = \
-    lambda record: record["level"].name == "INFO"
+info_filter = lambda record: record["level"].name == "INFO"
 logger.add(f"{LOG_DIR}info.log", filter=info_filter)
-error_filter = \
-    lambda record: record["level"].name == "ERROR" \
-                   and "traceback" not in record["extra"]
+error_filter = (
+    lambda record: record["level"].name == "ERROR"
+    and "traceback" not in record["extra"]
+)
 logger.add(f"{LOG_DIR}error.log", filter=error_filter)
-debug_filter = \
-    lambda record: record["level"].name == "DEBUG" \
-                   and "traceback" not in record["extra"]
+debug_filter = (
+    lambda record: record["level"].name == "DEBUG"
+    and "traceback" not in record["extra"]
+)
 logger.add(f"{LOG_DIR}debug.log", filter=debug_filter)
 
 summary = open(f"{OUTPUT_PATH}summary.csv", "w")  # pipe delimited due to
@@ -58,10 +59,10 @@ summary.write("pdf|file|project\n")
 
 def remove_special_chars(text):
     text = text.lower()
-    for char in string.punctuation + '\n\t ':
-        text.replace(char, ' ')
+    for char in string.punctuation + "\n\t ":
+        text.replace(char, " ")
     new_text = ""
-    valid_chars = string.ascii_lowercase + ' '
+    valid_chars = string.ascii_lowercase + " "
     for char in text:
         if char in valid_chars:
             new_text += char
@@ -76,7 +77,7 @@ def replace_bad_characters(filepath):
 
 
 def remove_stop_words(tokens):
-    stop_words = set(stopwords.words('english'))
+    stop_words = set(stopwords.words("english"))
     return [w for w in tokens if w.lower() not in stop_words]
 
 
@@ -104,8 +105,8 @@ def extract_information(pdf_path):
                     new_contents = this_page.extract_text()
                 except:
                     logger.error(
-                        f"text extract failed; page {page} of {pdf_path} "
-                        f"ignored")
+                        f"text extract failed; page {page} of {pdf_path} " f"ignored"
+                    )
                     continue
                 contents = contents + new_contents
     except:
@@ -115,12 +116,11 @@ def extract_information(pdf_path):
     proj_numbers = []
     proj_numbers.append(re.search("Project No\. [0-9]+", contents))
     proj_numbers.append(re.search("PROJECT NO\. [0-9]+", contents))
-    proj_numbers.append('unknown_project-')
+    proj_numbers.append("unknown_project-")
 
     for number, proj_number in enumerate(proj_numbers):
         if isinstance(proj_number, re.Match):
-            project_number = \
-                proj_number.group().lower().replace('.', '') + "-"
+            project_number = proj_number.group().lower().replace(".", "") + "-"
             break
 
         if isinstance(proj_number, str):
@@ -129,7 +129,7 @@ def extract_information(pdf_path):
 
     contents = remove_special_chars(contents)
     contents = contents.strip()
-    contents = ''.join(contents)
+    contents = "".join(contents)
     if len(contents) == 0:
         logger.error(f"Nothing to tokenize: {pdf_path}")
         return ""
@@ -146,12 +146,12 @@ def extract_information(pdf_path):
     except FileExistsError:
         pass
     new_file = str(pdf_path).split("/")
-    new_file = project_number + new_file[-1][:-3] + 'txt'
-    new_file = str(pdf_path)[:str(pdf_path).rfind('/')] + '/' + new_file
+    new_file = project_number + new_file[-1][:-3] + "txt"
+    new_file = str(pdf_path)[: str(pdf_path).rfind("/")] + "/" + new_file
     new_file = new_file.replace(PATH, OUTPUT_PATH)
     new_file = replace_bad_characters(new_file)
     try:
-        with open(new_file, 'w') as f:
+        with open(new_file, "w") as f:
             f.write(contents)
             logger.info(f"Wrote {new_file}")
     except FileNotFoundError:
@@ -161,7 +161,7 @@ def extract_information(pdf_path):
 
 def getfiles():
     paths = []
-    for filepath in Path(PATH).rglob('*.pdf'):
+    for filepath in Path(PATH).rglob("*.pdf"):
         paths.append(filepath)
     return paths
 

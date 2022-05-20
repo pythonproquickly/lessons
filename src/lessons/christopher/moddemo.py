@@ -1,8 +1,8 @@
 import pysnooper
 
-def addup(x,y):
-    return x + y
 
+def addup(x, y):
+    return x + y
 
 
 if __name__ == "__main__":

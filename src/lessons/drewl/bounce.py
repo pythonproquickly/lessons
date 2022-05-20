@@ -6,27 +6,29 @@ print("press Control-C to stop.")
 try:
     import bext
 except ImportError:
-    print("""This program requires the bext module which you can install at /
-    https://pypi.org/project/Bext/""")
+    print(
+        """This program requires the bext module which you can install at /
+    https://pypi.org/project/Bext/"""
+    )
 
 # set up the constraints:
 width, height = bext.size()
 width -= 1
 number_of_logos = 10  # try changing this from 1 to 100
 pause_amount = 0.05
-colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
+colors = ["red", "green", "yellow", "blue", "magenta", "cyan", "white"]
 
-up_right = 'ur'
-up_left = 'ul'
-down_right = 'dr'
-down_left = 'dl'
+up_right = "ur"
+up_left = "ul"
+down_right = "dr"
+down_left = "dl"
 directions = [up_right, up_left, down_right, down_left]
 
 # Key names for logo dictionaries:
-color = 'color'
-x = 'x'
-y = 'y'
-direction = 'direction'
+color = "color"
+x = "x"
+y = "y"
+direction = "direction"
 
 
 def main():
@@ -35,12 +37,14 @@ def main():
     # generate some logos
     logos = []
     for i in range(number_of_logos):
-        logos.append({
-            color: random.choice(colors),
-            x: random.randint(1, width - 4),
-            y: random.randint(1, height - 4),
-            direction: random.choice(directions)
-        })
+        logos.append(
+            {
+                color: random.choice(colors),
+                x: random.randint(1, width - 4),
+                y: random.randint(1, height - 4),
+                direction: random.choice(directions),
+            }
+        )
         if logos[-1][x] % 2 == 1:
             # make sure x is even so it can hit the corner.
             logos[-1][x] -= 1
@@ -49,7 +53,7 @@ def main():
     while True:  # main program loop.
         for logo in logos:
             bext.goto(logo[x], logo[y])
-            print('    ', end='')  # Try commenting this line out.
+            print("    ", end="")  # Try commenting this line out.
 
             original_direction = logo[direction]
 
@@ -120,14 +124,14 @@ def main():
 
         # Display the number of corner bounces:
         bext.goto(5, 0)
-        bext.fg('white')
-        print('corner bounces:', corner_bounces, end='')
+        bext.fg("white")
+        print("corner bounces:", corner_bounces, end="")
 
         for logo in logos:
             # Draw the logos at their new location:
             bext.goto(logo[x], logo[y])
             bext.fg(logo[color])
-            print('dvd', end='')
+            print("dvd", end="")
 
         bext.goto(0, 0)
 
@@ -135,7 +139,7 @@ def main():
         time.sleep(pause_amount)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:

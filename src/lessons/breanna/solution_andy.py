@@ -21,8 +21,8 @@ def match_condition(key, value, select_condition, select_column, select_value):
 def find(query, data):
     # y is all records with the columns in them
     # search is all records independently
-    selects = query['select']
-    displays = query['display']
+    selects = query["select"]
+    displays = query["display"]
     for number, line in enumerate(data):
         line = line.strip()
         dictified_line = dictify(line)
@@ -46,10 +46,9 @@ def find(query, data):
                     for key, value in dictified_line.items():
                         if key != select_column:
                             continue
-                        match = match_condition(key, value,
-                                                select_condition,
-                                                select_column,
-                                                select_value)
+                        match = match_condition(
+                            key, value, select_condition, select_column, select_value
+                        )
                         """print(match, key, value,
                               select_condition,
                               select_column,
@@ -60,10 +59,10 @@ def find(query, data):
         print_line = ""
         """print("Z", displays == ['Z'], match)"""
         if match:
-            if displays != ['Z']:
+            if displays != ["Z"]:
                 # print(number + 1, "SPECIFIC COLS", dictified_line, displays)
                 for key, value in dictified_line.items():
-                    for column in ''.join(displays).replace(" ", ""):
+                    for column in "".join(displays).replace(" ", ""):
                         if key == column:
                             print_line += f"{key}: {value} "
                 if print_line != "":
@@ -80,8 +79,8 @@ def find(query, data):
 
 
 def sort(sort_type, source):
-    column = sort_type['sort'][0]
-    sort_type_code = int(sort_type['sort'][3:].strip())
+    column = sort_type["sort"][0]
+    sort_type_code = int(sort_type["sort"][3:].strip())
     data_to_sort = []
     for number, line in enumerate(source):
         if column in line:
@@ -111,14 +110,14 @@ def dictify(data_with_colons):
     return results
 
 
-with open('data.txt') as f:
+with open("data.txt") as f:
     data = f.read().splitlines()
 """for datum in data:
     print(datum)
 exit()"""
 queries = {}
 query_num = 0
-with open('final.txt') as f:
+with open("final.txt") as f:
     while True:
         line = f.readline().strip()
         if len(line) == 0:
@@ -128,30 +127,29 @@ with open('final.txt') as f:
         if line == "FIND":
             query_num += 1
             queries[query_num] = {}
-            queries[query_num]['select'] = []
-            queries[query_num]['display'] = []
-            queries[query_num]['type'] = 'FIND'
+            queries[query_num]["select"] = []
+            queries[query_num]["display"] = []
+            queries[query_num]["type"] = "FIND"
             line = f.readline().strip()
             if line == "Y":
-                queries[query_num]['select'].append(line)
+                queries[query_num]["select"].append(line)
                 line = f.readline().strip()
             while line[2] in "<>=":
-                queries[query_num]['select'].append(line)
+                queries[query_num]["select"].append(line)
                 line = f.readline().strip()
-            queries[query_num]['display'].append(
-                line[:-1].replace(';', '').strip())
+            queries[query_num]["display"].append(line[:-1].replace(";", "").strip())
 
         elif line == "SORT":
             query_num += 1
             queries[query_num] = {}
-            queries[query_num]['type'] = 'SORT'
+            queries[query_num]["type"] = "SORT"
             line = f.readline().strip()
-            queries[query_num]['sort'] = line.replace(";", "")
+            queries[query_num]["sort"] = line.replace(";", "")
 
         else:
             query_num += 1
             queries[query_num] = {}
-            queries[query_num]['type'] = 'ERROR'
+            queries[query_num]["type"] = "ERROR"
             print(f"Query type of {line} invalid for query # {query_num}")
             line = f.readline()
 """for key, query in queries.items():
@@ -159,7 +157,7 @@ with open('final.txt') as f:
 exit()"""
 for query_number, query in queries.items():
     # print(query_number, query)
-    if query['type'] == 'FIND':
+    if query["type"] == "FIND":
         find(query, data)
-    elif query['type'] == 'SORT':
+    elif query["type"] == "SORT":
         sort(query, data)

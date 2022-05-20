@@ -3,8 +3,8 @@ import unittest
 
 import blackjack2
 
-class Testblackjack2(unittest.TestCase):
 
+class Testblackjack2(unittest.TestCase):
     def test_score_basic(self):
         ret = blackjack2.score([3])
         self.assertEqual((3, 0), ret)
@@ -28,19 +28,19 @@ class Testblackjack2(unittest.TestCase):
         self.assertEqual((45, 0), ret)
 
     def test_part_one_cases(self):
-        self.assertEqual(blackjack2.score([ 3, 12 ]), (13, 0))
-        self.assertEqual(blackjack2.score([ 5, 5, 10 ]), (20, 0))
-        self.assertEqual(blackjack2.score([ 11, 10, 1 ]), (21, 0))
-        self.assertEqual(blackjack2.score([ 1, 5 ]), (16, 1))
-        self.assertEqual(blackjack2.score([ 1, 1, 5 ]), (17, 1))
-        self.assertEqual(blackjack2.score([ 1, 1, 1, 7 ]), (20, 1))
-        self.assertEqual(blackjack2.score([ 7, 8, 10 ]), (25, 0))
+        self.assertEqual(blackjack2.score([3, 12]), (13, 0))
+        self.assertEqual(blackjack2.score([5, 5, 10]), (20, 0))
+        self.assertEqual(blackjack2.score([11, 10, 1]), (21, 0))
+        self.assertEqual(blackjack2.score([1, 5]), (16, 1))
+        self.assertEqual(blackjack2.score([1, 1, 5]), (17, 1))
+        self.assertEqual(blackjack2.score([1, 1, 1, 7]), (20, 1))
+        self.assertEqual(blackjack2.score([7, 8, 10]), (25, 0))
 
     def test_score_with_soft_aces(self):
         ret = blackjack2.score([1])
         self.assertEqual((11, 1), ret)
 
-        ret = blackjack2.score([1,10])
+        ret = blackjack2.score([1, 10])
         self.assertEqual((21, 1), ret)
 
         ret = blackjack2.score([1, 2, 3])
@@ -78,5 +78,6 @@ class Testblackjack2(unittest.TestCase):
         self.assertTrue(blackjack2.stand(16, STAND_ON_SOFT, [5, 5, 3, 4]))
         self.assertTrue(blackjack2.stand(16, HIT_ON_SOFT, [5, 5, 3, 4]))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

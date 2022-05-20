@@ -20,6 +20,7 @@ class Time:
     A class that represents the time and the day of the week.
     Not necessary to implement holidays/weekends (interested in time of the greatest traffic).
     """
+
     busy: bool = False
     hour: int = 0  # 0-8 representing hour of workday
 
@@ -30,6 +31,7 @@ class Elevator:
     A class that represents a device to move people vertically through a building.
     Are expensive and almost impossible to add to existing building.
     """
+
     # A standard elevator typically can hold between 1,000 and 6,000
     # pounds
     max_weight: int
@@ -50,6 +52,7 @@ class Building:
     """
     A class that represents the location of the Elevator.
     """
+
     num_floors: int
     floors: list
 
@@ -59,6 +62,7 @@ class Floor:
     """
     A class that represents the floor of a building.
     """
+
     pass
 
 
@@ -67,4 +71,5 @@ class Passenger:
     """
     A class that represents a living thing that can ride an elevator.
     """
+
     weight: float

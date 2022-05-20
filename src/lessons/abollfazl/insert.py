@@ -6,7 +6,7 @@ def insertion_sort(array):
         # correct place
         key_item = array[i]
 
-       # Initialize the variable that will be used to
+        # Initialize the variable that will be used to
         # find the correct position of the element referenced
         # by `key_item`
         j = i - 1
@@ -25,4 +25,5 @@ def insertion_sort(array):
         array[j + 1] = key_item
     return array
 
-inserttion_sort([6,2,7,2,1])
+
+inserttion_sort([6, 2, 7, 2, 1])

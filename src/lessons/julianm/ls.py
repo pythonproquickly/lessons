@@ -18,7 +18,7 @@ class SalesForDay:
         if calculate_days == -1:
             profit = 0
             for day, products in self.sales:
-                profit += products['name']
+                profit += products["name"]
         return self.sales[day]
 
 
@@ -29,5 +29,4 @@ class LemonadeStand:
         self.daily_sales = []
 
     def add_to_menu(self, menu_item):
-        self.menu[menu_item.name] = (
-            menu_item.wholesale_cost, menu_item.selling_price)
+        self.menu[menu_item.name] = (menu_item.wholesale_cost, menu_item.selling_price)

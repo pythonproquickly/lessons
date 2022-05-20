@@ -49,9 +49,9 @@ def encode_pixel(cover_pixel, secret_pixel):
     # Implement this function
     # return a temporary value.  Change this!!
     for color in (RED, BLUE, GREEN):
-        if secret_pixel[color] >= 128: # lot of this color
+        if secret_pixel[color] >= 128:  # lot of this color
             cover_pixel[color] = set_lowest_bit(cover_pixel[color], 1)
-        elif secret_pixel[color] <= 127: # not much of this color
+        elif secret_pixel[color] <= 127:  # not much of this color
             cover_pixel[color] = set_lowest_bit(cover_pixel[color], 0)
 
     return cover_pixel[RED], cover_pixel[GREEN], cover_pixel[BLUE]
@@ -105,7 +105,7 @@ def get_lowest_bit(value):
 def set_lowest_bit(value, bit_value):
     if bit_value == 0:
         if not is_even(value):
-            value = value -1
+            value = value - 1
     else:
         if is_even(value):
             value = value + 1
@@ -195,8 +195,13 @@ if IMAGE_WIDTH % 2 == 1:
 original = Image(ORIGINAL_URL, IMAGE_X, IMAGE_Y, IMAGE_WIDTH, IMAGE_HEIGHT)
 
 # Set up secret image
-secret = Image(SECRET_URL, IMAGE_X + original.get_width() + X_GAP, IMAGE_Y,
-               IMAGE_WIDTH, IMAGE_HEIGHT)
+secret = Image(
+    SECRET_URL,
+    IMAGE_X + original.get_width() + X_GAP,
+    IMAGE_Y,
+    IMAGE_WIDTH,
+    IMAGE_HEIGHT,
+)
 
 # Set up the cover image
 # (identical to original, but will be modified to encode the secret image)
@@ -205,8 +210,9 @@ cover_y = IMAGE_Y + Y_GAP + IMAGE_HEIGHT
 cover = Image(ORIGINAL_URL, cover_x, cover_y, IMAGE_WIDTH, IMAGE_HEIGHT)
 
 # Set up result image
-result = Image(ORIGINAL_URL, cover_x, cover_y + Y_GAP + IMAGE_HEIGHT,
-               IMAGE_WIDTH, IMAGE_HEIGHT)
+result = Image(
+    ORIGINAL_URL, cover_x, cover_y + Y_GAP + IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT
+)
 
 # Add originals
 add(original)
@@ -246,8 +252,7 @@ make_label("Cover Image with Secret Image encoded inside", x_pos, y_pos, font)
 # result label
 x_pos = IMAGE_X
 y_pos = cover.get_y() + IMAGE_HEIGHT + Y_GAP - TEXT_Y_GAP
-make_label("Resulting Secret Image decoded from Cover Image", x_pos, y_pos,
-           font)
+make_label("Resulting Secret Image decoded from Cover Image", x_pos, y_pos, font)
 
 
 # Encrypt and decrypt the image

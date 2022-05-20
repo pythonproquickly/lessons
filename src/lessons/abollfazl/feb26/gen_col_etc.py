@@ -9,6 +9,7 @@ import itertools as it
 
 # generators
 
+
 def fibonacci():
     previous, current = 0, 1
     while True:
@@ -79,19 +80,19 @@ print(counter.most_common())
 
 # ---- Named tuple
 
-Location = namedtuple('Location', ['lat', 'long'])
+Location = namedtuple("Location", ["lat", "long"])
 loc = Location(lat=23.0012, long=80.98)
 print(loc.lat, loc.long)
 
 
 def big_ugly_function(origin, destination, weight, volume):
-    print(
-        f"going to {destination} from {origin} weighs {weight} size {volume}")
+    print(f"going to {destination} from {origin} weighs {weight} size {volume}")
 
 
 from_seattle = partial(big_ugly_function, origin="seattle")
-to_london_from_chicago = partial(big_ugly_function, origin="chicago",
-                                 destination="london")
+to_london_from_chicago = partial(
+    big_ugly_function, origin="chicago", destination="london"
+)
 
 from_seattle(destination="Houston", weight=10, volume=23.4)
 to_london_from_chicago(weight=99, volume=56.34)
@@ -99,7 +100,7 @@ to_london_from_chicago(weight=99, volume=56.34)
 # itertools
 
 x = [1, 2, 3, 4, 5]
-y = ['a', 'b', 'c']
+y = ["a", "b", "c"]
 print(list(zip(x, y)))
 print(list(it.zip_longest(x, y)))
 

@@ -41,6 +41,7 @@ def singlethread():
     for url in urls:
         webscraper(url)
 
+
 async def wait():
     sleep(5)
 
@@ -57,6 +58,7 @@ async def main():
                 #data = await resp.read()"""
     data = await wait()
     assert data is None
+
 
 if __name__ == "__main__":
     start = time.perf_counter()

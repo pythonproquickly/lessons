@@ -19,28 +19,30 @@ print(f"\n5 random odd numbers: {random_odds}")
 print(f"5 sorted odd numbers: {sorted_odds}")
 print(
     "\nHere the methods: sum(), min(), and max() are used in a for loop on 4/5 of the lowest odd numbers.\n"
-    "The loop is then repeated for 4/5 highest odd numbers. ")
+    "The loop is then repeated for 4/5 highest odd numbers. "
+)
 odds_lowest = sorted_odds[0:4]
 odds_highest = sorted_odds[1:]
 
 for nums in [odds_lowest, odds_highest]:
-    print(f'Sum: {sum(nums)}')
-    print(f'Min: {min(nums)}')
-    print(f'Max: {max(nums)}')
+    print(f"Sum: {sum(nums)}")
+    print(f"Min: {min(nums)}")
+    print(f"Max: {max(nums)}")
 
 print(f"\n5 random even numbers: {random_evens}")
 print(f"5 sorted even numbers: {sorted_evens}")
 
 print(
     "\nHere the methods: sum(), min(), and max() are used in a for loop on 4/5 of the lowest even numbers.\n"
-    "The for loop is then repeated for 4/5 highest even numbers. ")
+    "The for loop is then repeated for 4/5 highest even numbers. "
+)
 evens_lowest = sorted_evens[0:4]
 evens_highest = sorted_evens[1:]
 
 for nums in [evens_lowest, evens_highest]:
-    print(f'Sum: {sum(nums):>4}')
-    print(f'Min: {min(nums):>4}')
-    print(f'Max: {max(nums):>4}')
+    print(f"Sum: {sum(nums):>4}")
+    print(f"Min: {min(nums):>4}")
+    print(f"Max: {max(nums):>4}")
 
 # This is cool because you can keep re-running the program
 # and it will select a new group of numbers to work on.

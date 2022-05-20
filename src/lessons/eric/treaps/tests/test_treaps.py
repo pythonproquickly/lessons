@@ -10,6 +10,7 @@ from typing import Any
 # For example, there is no test for join(). You should write some.
 # Be sure to read the test cases carefully.
 
+
 def test_empty_lookup() -> None:
     """Test `lookup` on an empty Treap."""
 
@@ -139,4 +140,3 @@ def test_bst_property_simple() -> None:
             assert root_node.value >= root_node.left_child.value
         if root_node.key != "9":
             assert root_node.value <= root_node.right_child.value
-
