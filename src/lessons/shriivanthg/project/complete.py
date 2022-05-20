@@ -9,8 +9,8 @@ screen.title("Wordle Solver - PythonTurtle.Academy")
 turtle.speed(0)
 turtle.hideturtle()
 screen.tracer(0, 0)
-screen.bgcolor('black')
-turtle.color('white')
+screen.bgcolor("black")
+turtle.color("white")
 
 gs = 0
 state = []
@@ -27,10 +27,11 @@ def getwords(words, cs, count=False):
         cnt = dict()
         # first loop checks only positions are set
         for l, p in cs:
-            if p < 0: continue
+            if p < 0:
+                continue
             if cs[(l, p)] > 0:
                 if t[p] == l:
-                    t[p] = '*'
+                    t[p] = "*"
                     if l in cnt:
                         cnt[l] += 1
                     else:
@@ -42,23 +43,28 @@ def getwords(words, cs, count=False):
                 if t[p] == l:
                     flag = False
                     break
-        if (not flag): continue
+        if not flag:
+            continue
         # second loop checks only positions are not set
         for l, p in cs:
-            if p != -1: continue
+            if p != -1:
+                continue
             v = 0 if l not in cnt else cnt[l]
             for _ in range(cs[(l, p)] - v):
                 try:
                     p = t.index(l)
-                    t[p] = '*'
+                    t[p] = "*"
                 except ValueError:
                     flag = False
                     break
-            if (not flag): break
-        if (not flag): continue
+            if not flag:
+                break
+        if not flag:
+            continue
         # third loops checks non-existent letter
         for l, p in cs:
-            if p != -2: continue
+            if p != -2:
+                continue
             if l in t:
                 flag = False
                 break
@@ -78,7 +84,7 @@ def guess_random(words):
     return random.choice(words)
 
 
-def draw_square(coord, s, fc='black'):
+def draw_square(coord, s, fc="black"):
     turtle.up()
     x = coord[0]
     y = coord[1]
@@ -98,7 +104,7 @@ def get_coord(i, j):
 
 
 def draw_board():
-    turtle.pencolor('dark gray')
+    turtle.pencolor("dark gray")
     for i in range(6):
         for j in range(5):
             draw_square(get_coord(i, j), 80)
@@ -106,35 +112,36 @@ def draw_board():
 
 def display_word(w):
     turtle.up()
-    turtle.color('white')
+    turtle.color("white")
     for i in range(5):
         x, y = get_coord(gs, i)
         turtle.goto(x, y - 23)
-        turtle.write(w[i].upper(), align='center', font=('Arial', 40, 'bold'))
+        turtle.write(w[i].upper(), align="center", font=("Arial", 40, "bold"))
 
 
 def update_cell(i, j):
     global w, state
     x, y = get_coord(i, j)
-    turtle.pencolor('dark gray')
+    turtle.pencolor("dark gray")
     if state[i][j] == 0:
-        fc = 'dark gray'
+        fc = "dark gray"
     elif state[i][j] == 1:
-        fc = 'goldenrod'
+        fc = "goldenrod"
     else:
-        fc = 'green'
+        fc = "green"
     draw_square(get_coord(i, j), 80, fc)
     turtle.up()
-    turtle.color('white')
+    turtle.color("white")
     turtle.goto(x, y - 23)
-    turtle.write(w[j].upper(), align='center', font=('Arial', 40, 'bold'))
+    turtle.write(w[j].upper(), align="center", font=("Arial", 40, "bold"))
     screen.update()
 
 
 def play(x, y):
     flag = False
     for i in range(6):
-        if flag: break
+        if flag:
+            break
         for j in range(5):
             cx, cy = get_coord(i, j)
             if (cx - x) ** 2 + (cy - y) ** 2 < 1600:
@@ -142,8 +149,10 @@ def play(x, y):
                 ci = i
                 cj = j
                 break
-    if not flag: return
-    if ci != gs: return
+    if not flag:
+        return
+    if ci != gs:
+        return
     state[ci][cj] = (state[ci][cj] + 1) % 3
     update_cell(ci, cj)
 
@@ -154,7 +163,8 @@ def submit():
     global w, words
 
     for i in range(5):
-        if state[gs][i] == -1: return
+        if state[gs][i] == -1:
+            return
 
     cs = dict()
     for i in range(5):
@@ -182,18 +192,18 @@ def submit():
 
 
 orig_words = []
-f = open('wordle_words.txt', 'r')
+f = open("wordle_words.txt", "r")
 for w in f:
     orig_words.append(w.strip())
 
 cs = dict()
 words = getwords(orig_words, cs)
 w = guess_random(words)
-w = 'tesla'
+w = "tesla"
 draw_board()
 display_word(w)
 screen.update()
 screen.onclick(play)
-screen.onkey(submit, 'Return')
+screen.onkey(submit, "Return")
 screen.listen()
 screen.mainloop()

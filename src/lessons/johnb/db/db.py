@@ -17,7 +17,7 @@ sql_statements = [
 
 
 def main():
-    """ run the sql """
+    """run the sql"""
     sql = input("which record number?: ")
     full_sql = "select id, name from test where id = " + sql
     sql_statements.append(full_sql)

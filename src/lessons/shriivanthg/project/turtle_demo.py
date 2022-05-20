@@ -6,8 +6,8 @@ screen.title("Wordle")
 turtle.speed(0)
 turtle.hideturtle()
 screen.tracer(0, 0)
-screen.bgcolor('black')
-turtle.color('white')
+screen.bgcolor("black")
+turtle.color("white")
 
 gs = 0
 state = []
@@ -15,7 +15,7 @@ for i in range(6):
     state.append([-1] * 5)
 
 
-def draw_square(coord, s, fc='black'):
+def draw_square(coord, s, fc="black"):
     turtle.up()
     x = coord[0]
     y = coord[1]
@@ -35,7 +35,7 @@ def get_coord(i, j):
 
 
 def draw_board():
-    turtle.pencolor('dark gray')
+    turtle.pencolor("dark gray")
     for i in range(6):
         for j in range(5):
             draw_square(get_coord(i, j), 80)
@@ -43,32 +43,32 @@ def draw_board():
 
 def display_word(w):
     turtle.up()
-    turtle.color('white')
+    turtle.color("white")
     for i in range(5):
         x, y = get_coord(gs, i)
         turtle.goto(x, y - 23)
-        turtle.write(w[i].upper(), align='center', font=('Arial', 40, 'bold'))
+        turtle.write(w[i].upper(), align="center", font=("Arial", 40, "bold"))
 
 
 def update_cell(i, j):
     global word, state
     x, y = get_coord(i, j)
-    turtle.pencolor('dark gray')
+    turtle.pencolor("dark gray")
     if state[i][j] == 0:
-        fc = 'dark gray'
+        fc = "dark gray"
     elif state[i][j] == 1:
-        fc = 'goldenrod'
+        fc = "goldenrod"
     else:
-        fc = 'green'
+        fc = "green"
     draw_square(get_coord(i, j), 80, fc)
     turtle.up()
-    turtle.color('white')
+    turtle.color("white")
     turtle.goto(x, y - 23)
-    turtle.write(word[j].upper(), align='center', font=('Arial', 40, 'bold'))
+    turtle.write(word[j].upper(), align="center", font=("Arial", 40, "bold"))
     screen.update()
 
 
-word = 'abcde'
+word = "abcde"
 draw_board()
 display_word(word)
 screen.update()

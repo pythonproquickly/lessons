@@ -15,6 +15,7 @@ def timer(func):
 
     return wrapper_timer
 
+
 # memoization
 class Speedy:
     def __init__(self, func):
@@ -27,7 +28,7 @@ class Speedy:
         return self.memo[args]
 
 
-#@Speedy
+# @Speedy
 def fibo(n):
     if n <= 1:
         return 1
@@ -58,4 +59,3 @@ def calc(write=False, ranges=(25, 35, 20, 42)):
 
 if __name__ == "__main__":
     calc(True, (24, 34, 21, 42))
-

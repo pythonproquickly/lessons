@@ -13,6 +13,7 @@ from flask import jsonify
 
 db_connect = create_engine("sqlite:///chinook.db")
 
+
 class Employees(Resource):
     def get(self):
         conn = db_connect.connect()
@@ -27,8 +28,7 @@ class Tracks(Resource):
         conn = db_connect.connect()
         sql = "select trackid, name, composer, unitprice from tracks;"
         query = conn.execute(sql)
-        result = {"data": [dict(zip(tuple(query.keys()), i))
-                           for i in query.cursor]}
+        result = {"data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
         conn.close()
         return jsonify(result)
 
@@ -39,8 +39,7 @@ class EmployeesName(Resource):
         query = conn.execute(
             "select * from employees where EmployeeId =%d " % int(employee_id)
         )
-        result = {"data": [dict(zip(tuple(query.keys()), i))
-                           for i in query.cursor]}
+        result = {"data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
         conn.close()
         return jsonify(result)
 

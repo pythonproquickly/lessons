@@ -8,24 +8,24 @@ import scipy.io.wavfile as wavfile
 
 def annotation2files(wavFile, csvFile):
     """
-        Break an audio stream to segments of interest,
-        defined by a csv file
+    Break an audio stream to segments of interest,
+    defined by a csv file
 
-        - wavFile:    path to input wavfile
-        - csvFile:    path to csvFile of segment limits
+    - wavFile:    path to input wavfile
+    - csvFile:    path to csvFile of segment limits
 
-        Input CSV file must be of the format <T1>\t<T2>\t<Label>
+    Input CSV file must be of the format <T1>\t<T2>\t<Label>
     """
 
     [Fs, x] = audioBasicIO.read_audio_file(wavFile)
-    with open(csvFile, 'r') as csvfile:
-        reader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+    with open(csvFile, "r") as csvfile:
+        reader = csv.reader(csvfile, delimiter="\t", quotechar="|")
         for j, row in enumerate(reader):
             T1 = float(row[0].replace(",", "."))
             T2 = float(row[1].replace(",", "."))
             label = "%s_%s_%.2f_%.2f.wav" % (wavFile, row[2], T1, T2)
             label = label.replace(" ", "_")
-            xtemp = x[int(round(T1 * Fs)):int(round(T2 * Fs))]
+            xtemp = x[int(round(T1 * Fs)) : int(round(T2 * Fs))]
             print(T1, T2, label, xtemp.shape)
             wavfile.write(label, Fs, xtemp)
 
@@ -37,11 +37,10 @@ def main(argv):
         annotation2files(wavFile, annotationFile)
     elif argv[1] == "-d":
         inputFolder = argv[2]
-        types = ('*.txt', '*.csv')
+        types = ("*.txt", "*.csv")
         annotationFilesList = []
         for files in types:
-            annotationFilesList.extend(glob.glob(os.path.join(inputFolder,
-                                                              files)))
+            annotationFilesList.extend(glob.glob(os.path.join(inputFolder, files)))
         for anFile in annotationFilesList:
             wavFile = os.path.splitext(anFile)[0] + ".wav"
             if not os.path.isfile(wavFile):
@@ -52,7 +51,7 @@ def main(argv):
             annotation2files(wavFile, anFile)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Used to extract a series of annotated WAV files based on
     # (a) an audio file (mp3 or wav) and
     # (b) a segment annotation file e.g. a "label" file generated in audacity

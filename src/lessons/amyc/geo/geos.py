@@ -53,8 +53,7 @@ def get_input():
         input_data[4][0]
         + " "
         + input_data[4][1].split()[0]: " ".join(input_data[4][1].split()[1:]),
-        input_data[5][0]
-        + " "
+        input_data[5][0] + " "
         # + input_data[5][1].split()[0]: " ".join(input_data[5][1].split()[1:]),
         + input_data[5][1].split()[0]: input_data[5][2],
     }

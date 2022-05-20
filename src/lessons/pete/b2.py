@@ -30,7 +30,9 @@ def bowlingScore(rolls):
 
 
 def testBowlingScore():
-    assert (bowlingScore([7, 2, 8, 2, 10, 7, 1, 8, 2, 7, 3, 10, 10, 5, 4, 8, 2, 7]) == 162)
+    assert (
+        bowlingScore([7, 2, 8, 2, 10, 7, 1, 8, 2, 7, 3, 10, 10, 5, 4, 8, 2, 7]) == 162
+    )
     assert (
         bowlingScore([2, 6, 2, 6, 9, 1, 10, 10, 10, 5, 1, 4, 5, 9, 0, 9, 1, 6]) == 147
     )

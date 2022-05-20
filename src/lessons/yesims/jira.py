@@ -5,18 +5,15 @@ import json
 
 url = "https://your-domain.atlassian.com/rest/agile/1.0/board"
 
-headers = {
-    "Accept": "application/json"
-}
+headers = {"Accept": "application/json"}
 
-response = requests.request(
-    "GET",
-    url,
-    headers=headers
+response = requests.request("GET", url, headers=headers)
+
+print(
+    json.dumps(
+        json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")
+    )
 )
-
-print(json.dumps(json.loads(response.text), sort_keys=True, indent=4,
-                 separators=(",", ": ")))
 
 """
 jupyter run

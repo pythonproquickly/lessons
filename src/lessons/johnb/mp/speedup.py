@@ -30,6 +30,7 @@ class Speedy:
             self.memo[args] = self.func(*args)
         return self.memo[args]
 
+
 @Speedy
 def fibo(n):
     if n <= 1:
@@ -41,6 +42,7 @@ def save_it(alist, name):
     with open(name, "w") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(alist)
+
 
 @timer
 def calc(write=False, ranges=(25, 35, 20, 42)):

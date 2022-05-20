@@ -19,23 +19,28 @@ Jack, Queen, King = 11, 12, 13
 Returns:
 Random integers 1 - 13 (integer)
 """
+
+
 def get_card():
     return random.randint(1, 13)
+
 
 """
 Score function converts integers representing the total value (tuple) of cards
 in a Blackjack hand (soft aces are converted from 11 to 1 to keep the hand from
 going bust.)
 """
+
+
 def score(cards):
-    #total = 0
-    #soft_ace_count = 0
+    # total = 0
+    # soft_ace_count = 0
     # Conditions for when player's hand has an ace and total is equal to or
     # less than 21.
     # Example, hand is greater than 21 with ace card, convert from 11 to 1
     # (soft ace) add to total amount in hand without going bust.
-    Score = namedtuple('Score', ['total', 'soft_ace_count'])
-    score = Score(0, 0) #abstantiating a score
+    Score = namedtuple("Score", ["total", "soft_ace_count"])
+    score = Score(0, 0)  # abstantiating a score
     """s = Score(15, 1)
     assert s.total == 1 #access properties of s, testing s
     assert s.soft_ace_count == 1
@@ -63,7 +68,8 @@ def score(cards):
             if score.total > 21 and score.soft_ace_count == 1:
                 score.total -= 10
                 score.soft_ace_count = 0
-    return score.total, score.soft_ace_count #no () needed for tuple
+    return score.total, score.soft_ace_count  # no () needed for tuple
+
 
 """
 Stand function is the stand-on value (e.g., 17), a Boolean value (True/False)
@@ -78,6 +84,8 @@ cards
 Returns:
 True or False (Boolean)
 """
+
+
 def stand(stand_on_value, stand_on_soft, cards):
     total, soft_ace_count = score(cards)
     if stand_on_soft == True:
@@ -93,9 +101,10 @@ def stand(stand_on_value, stand_on_soft, cards):
         else:
             return True
 
+
 def main():
     s1, s2, s3 = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]
-    if s1 <= 0 or s2 < 1 or s2 > 20 or s3 != 'soft' and s3 != 'hard':
+    if s1 <= 0 or s2 < 1 or s2 > 20 or s3 != "soft" and s3 != "hard":
         raise ValueError
     bust = 0
 
@@ -103,11 +112,12 @@ def main():
         cards = [get_card()]
         cards.append(get_card())
 
-        while stand(s2, s3 == 'soft', cards) == False:
+        while stand(s2, s3 == "soft", cards) == False:
             cards.append(get_card())
         if score(cards)[0] > 21:
             bust += 1
-    return (f"Bust Percentage = {bust/s1}")
+    return f"Bust Percentage = {bust/s1}"
+
 
 if __name__ == "__main__":
     print(main())

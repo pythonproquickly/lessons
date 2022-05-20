@@ -26,7 +26,7 @@ def main(column_number, data_file):
             line = line.rstrip()
             lines.append(float(line))
     else:
-        f = open(data_file, 'r')
+        f = open(data_file, "r")
         for line in f:
             line = line.split(" ")
             line = line[column_number]

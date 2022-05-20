@@ -3,7 +3,7 @@ import sys
 import csv
 from collections import namedtuple
 from collections import defaultdict
-    
+
 
 def default_value():
     return 0

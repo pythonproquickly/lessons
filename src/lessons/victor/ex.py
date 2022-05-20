@@ -11,7 +11,7 @@ def test_map():
     items = [1, 2, 3, 4, 5]
     squared = []
     for x in items:
-        squared.append(x ** 2)
+        squared.append(x**2)
 
     assert squared == [1, 4, 9, 16, 25]
 
@@ -22,7 +22,7 @@ def test_map():
     items = [1, 2, 3, 4, 5]
 
     def sqr(x):
-        return x ** 2
+        return x**2
 
     squared = list(map(sqr, items))  # map() returns a map object
 
@@ -32,7 +32,7 @@ def test_map():
 
     # how about:
     items = [1, 2, 3, 4, 5]
-    squared = list(map((lambda x: x ** 2), items))
+    squared = list(map((lambda x: x**2), items))
 
     assert squared == [1, 4, 9, 16, 25]
 
@@ -44,10 +44,10 @@ def test_map():
     # cool stuff:
 
     def square(x):
-        return x ** 2
+        return x**2
 
     def cube(x):
-        return x ** 3
+        return x**3
 
     funcs = [square, cube]
     output = []

@@ -119,8 +119,7 @@ def multi_thread_best():
 def multi_thread_representative():
     threads = []
     for url in web_workload():
-        th = threading.Thread(target=requests.get,
-                              args=(url,))
+        th = threading.Thread(target=requests.get, args=(url,))
         threads.append(th)
         th.start()
 
@@ -132,8 +131,9 @@ def multi_thread_representative():
 def multi_process_best():
     processes = []
     for _ in range(jobs()):
-        processes.append(multiprocessing.Process(
-            target=do_some_work_that_blocks_for_duration))
+        processes.append(
+            multiprocessing.Process(target=do_some_work_that_blocks_for_duration)
+        )
         processes[-1].start()
     for process in processes:
         process.join()
@@ -143,8 +143,7 @@ def multi_process_best():
 def multi_process_representative():
     processes = []
     for url in web_workload():
-        processes.append(multiprocessing.Process(target=requests.get,
-                                                 args=(url,)))
+        processes.append(multiprocessing.Process(target=requests.get, args=(url,)))
         processes[-1].start()
     for process in processes:
         process.join()
@@ -173,8 +172,10 @@ async def async_process_representative():
 
 
 async def main():
-    print(f"With total blocking, best case is {workload()}, worst case is "
-          f"{jobs() * workload()}")
+    print(
+        f"With total blocking, best case is {workload()}, worst case is "
+        f"{jobs() * workload()}"
+    )
 
     single_thread_best()
     multi_thread_best()

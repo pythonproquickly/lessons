@@ -12,17 +12,16 @@ class Stack:
         return popped
 
     def __repr__(self):
-        return '|'.join(self.__the_stack)
+        return "|".join(self.__the_stack)
 
 
-
-s = Stack(['1', '2', '3'])
-s.push('999')
+s = Stack(["1", "2", "3"])
+s.push("999")
 s.pop()
 s.pop()
 print(repr(s))
 
+
 class Queue:
     # FIFO
     pass
-

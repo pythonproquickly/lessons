@@ -13,7 +13,7 @@ def levelOrder(root):
     while True:
         currentNode = q.pop(0)
         if currentNode is not None:
-            print(currentNode.val, end=' ')
+            print(currentNode.val, end=" ")
             if currentNode.left is not None:
                 q.append(currentNode.left)
             if currentNode.right is not None:
@@ -31,8 +31,8 @@ root.left = BSTNode(2)
 root.right = BSTNode(11)
 levelOrder(root)
 
-'''
+"""
  10
 /  \
 2  11
-'''
+"""

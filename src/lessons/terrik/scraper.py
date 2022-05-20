@@ -1,5 +1,5 @@
-import requests   # type: ignore
-from bs4 import BeautifulSoup   # type: ignore
+import requests  # type: ignore
+from bs4 import BeautifulSoup  # type: ignore
 
 headers = {
     "User-Agent": "Mozilla/5.0 (CrKey armv7l 1.5.16041) AppleWebKit/537.36 "

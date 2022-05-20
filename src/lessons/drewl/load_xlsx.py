@@ -1,12 +1,14 @@
 import pathlib
 import pandas as pd
-pd.set_option('display.max_columns', None)
+
+pd.set_option("display.max_columns", None)
 PATH = r"/Users/andy/ws/ctpsws-clients/lessons/src/lessons/drewl"
-FILE_TYPE = '*.xlsx'
+FILE_TYPE = "*.xlsx"
 
 
 def getfiles():
     return [filepath for filepath in pathlib.Path(PATH).rglob(FILE_TYPE)]
+
 
 def load_spreadsheets_to_list():
     excel_file_names = getfiles()

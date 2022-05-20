@@ -3,18 +3,17 @@ class Node:
         self.val = val
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
 
     def iterate(self):
-        
+
         printval = self.head
         while printval is not None:
             print(printval.val)
             printval = printval.next
-        
-        
 
 
 listofnodes = LinkedList()
@@ -29,10 +28,10 @@ node3.next = node4
 node4.next = node5
 
 
+# current.next = nextdist
 
-#current.next = nextdist 
+# nextdist
 
-#nextdist
 
 def removeduplicates(linkedlist):
     prevnode = linkedlist.head
@@ -44,11 +43,11 @@ def removeduplicates(linkedlist):
             prevnode.next = currentnode
             prevnode = currentnode
 
-
     if currentnode is None:
         prevnode.next = currentnode
-        
+
     return linkedlist
+
 
 """
 1 = prevnode

@@ -12,7 +12,7 @@ supplies_deque = deque()
 
 for item in csv_data:
 
-    if item[2] == 'important':
+    if item[2] == "important":
         supplies_deque.appendleft(item)
 
     else:

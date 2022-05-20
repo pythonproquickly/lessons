@@ -1,9 +1,10 @@
-countries = {'uk', 'france', 'india', 'belgium'}
-people = ['andy', 'sue', 'fred', 'pete']
-colors = {1: 'red', 2: 'blue', 3: 'green'}
+countries = {"uk", "france", "india", "belgium"}
+people = ["andy", "sue", "fred", "pete"]
+colors = {1: "red", 2: "blue", 3: "green"}
 sizes = (3, 5, 6, 9, 12)
-document = "Sometimes, a simple algorithm can achieve drastic performance " \
-           "improvements."
+document = (
+    "Sometimes, a simple algorithm can achieve drastic performance " "improvements."
+)
 
 assert isinstance(people, list)
 

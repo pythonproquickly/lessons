@@ -13,7 +13,7 @@ class Queue:
     def removefromQueue(self):
         if len(self.queue) > 0:
             return self.queue.pop()
-        return ("No elements in Queue!")
+        return "No elements in Queue!"
 
 
 q = Queue()

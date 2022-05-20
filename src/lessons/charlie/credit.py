@@ -1,6 +1,7 @@
 """Perform credit card calculations."""
 # #ANDY: import package to handle command line argument parsing
 from argparse import ArgumentParser
+
 # #ANDY: this is not needed
 import sys
 
@@ -21,8 +22,8 @@ def get_min_payment(b, f=0):
     g (float or int): Minimum credit card payment
     """
 
-    m = .02
-    g = ((b * m) + f)
+    m = 0.02
+    g = (b * m) + f
     if g < 25:
         g = 25
 
@@ -89,11 +90,11 @@ def remaining_payments(balance, r, tp, credit_line=5000, a=0):
 
         """
         balance = balance - principal
-        if balance >= .75 * credit_line:
+        if balance >= 0.75 * credit_line:
             counter_s += 1
-        if balance >= .5 * credit_line:
+        if balance >= 0.5 * credit_line:
             counter_f += 1
-        if balance >= .25 * credit_line:
+        if balance >= 0.25 * credit_line:
             counter_t += 1
         counter_p += 1
 
@@ -125,18 +126,19 @@ def main(b, apr, credit_line=5000, targetamount=None, fees=0):
         pays_minimum = True
     elif targetamount < min_payment:
         print(
-            "Your target payment is less than the minimum payment for this credit card")
+            "Your target payment is less than the minimum payment for this credit card"
+        )
         return
-    total_payments = remaining_payments(b, apr, targetamount, credit_line,
-                                        fees)
+    total_payments = remaining_payments(b, apr, targetamount, credit_line, fees)
     if pays_minimum == True:
         print(
-            f"If you pay the minimum payments each month, you will pay off the balance in {total_payments[0]} payments.")
+            f"If you pay the minimum payments each month, you will pay off the balance in {total_payments[0]} payments."
+        )
     if pays_minimum == False:
         print(
-            f"If you make payments of {targetamount}, you will pay off the balance in {total_payments[0]} payments.")
-    return (
-        f"You will spend a total of {total_payments[1]} months over 25% of the credit line. \n You will spend a total of {total_payments[2]} months over 50% of the credit line. \n You will spend a total of {total_payments[3]} months over 75% of the credit line.")
+            f"If you make payments of {targetamount}, you will pay off the balance in {total_payments[0]} payments."
+        )
+    return f"You will spend a total of {total_payments[1]} months over 25% of the credit line. \n You will spend a total of {total_payments[2]} months over 50% of the credit line. \n You will spend a total of {total_payments[3]} months over 75% of the credit line."
 
 
 # #ANDY: Here the program processes the command line arguments
@@ -154,16 +156,28 @@ def parse_args(args_list):
     # #ANDY: get the command line arguments
     parser = ArgumentParser()
     # #ANDY: define the arguments
-    parser.add_argument('balance_amount', type=float,
-                        help='The total amount of balance left on the credit account')
-    parser.add_argument('apr', type=int,
-                        help='The annual APR, should be an int between 1 and 100')
-    parser.add_argument('credit_line', type=int,
-                        help='The maximum amount of balance allowed on the credit line.')
-    parser.add_argument('--payment', type=int, default=None,
-                        help='The amount the user wants to pay per payment, should be a positive number')
-    parser.add_argument('--fees', type=float, default=0,
-                        help='The fees that are applied monthly.')
+    parser.add_argument(
+        "balance_amount",
+        type=float,
+        help="The total amount of balance left on the credit account",
+    )
+    parser.add_argument(
+        "apr", type=int, help="The annual APR, should be an int between 1 and 100"
+    )
+    parser.add_argument(
+        "credit_line",
+        type=int,
+        help="The maximum amount of balance allowed on the credit line.",
+    )
+    parser.add_argument(
+        "--payment",
+        type=int,
+        default=None,
+        help="The amount the user wants to pay per payment, should be a positive number",
+    )
+    parser.add_argument(
+        "--fees", type=float, default=0, help="The fees that are applied monthly."
+    )
 
     # #ANDY: get the srguments values and set corresponding variables
     # raise errors if the values are invalid
@@ -197,10 +211,15 @@ if __name__ == "__main__":
 
     # #ANDY: now we know the parameters are correct we can run
     # #ANDY: the valid args are passed to main
-    print(main(arguments.balance_amount, arguments.apr,
-               credit_line=arguments.credit_line,
-               targetamount=arguments.payment,
-               fees=arguments.fees))
+    print(
+        main(
+            arguments.balance_amount,
+            arguments.apr,
+            credit_line=arguments.credit_line,
+            targetamount=arguments.payment,
+            fees=arguments.fees,
+        )
+    )
 
     # #ANDY# comment out line 191 and uncomment what follows to see the
     # program run

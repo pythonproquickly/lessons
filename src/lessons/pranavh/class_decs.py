@@ -9,7 +9,7 @@ class Pizza:
     # conceptually, I "belong" to the class (but a subtle point)
     @staticmethod
     def compute_area(radius):
-        return math.pi * (radius ** 2)
+        return math.pi * (radius**2)
 
     # i can use properties of the class
     @classmethod

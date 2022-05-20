@@ -2,6 +2,7 @@
 # if you need instance variables class scoped variables are confusing
 # look at subtleties of this...
 
+
 class OneWay:
     a = 1
     b = []

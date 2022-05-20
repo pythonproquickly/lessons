@@ -17,12 +17,11 @@ def divide(x, y=1):
 
 
 def read_from_file():
-    #f = open('stuff.txt', 'r')
-    with open('stuff.txt', 'r') as f:
+    # f = open('stuff.txt', 'r')
+    with open("stuff.txt", "r") as f:
         contents = f.readlines()
     # f.close()
     return contents
-
 
 
 def doit():

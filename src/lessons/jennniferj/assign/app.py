@@ -17,14 +17,16 @@ engine.connect()
 
 def menu():
     while True:
-        print("""
+        print(
+            """
         Dr. Joy's Grocery Store Inventory Application
         \n Please select a choice:
         N) New Product
         V) View Product
         A) Availability of Product
         B) Backup
-        Q) Quit""")
+        Q) Quit"""
+        )
         choice = input("What do you wish to do?").lower()
         if choice in "nvabq":
             return choice
@@ -47,11 +49,12 @@ def import_csvinventory(brand_map):  # works, but needs cleans
             row_counter += 1
             new_item = Product(
                 id=row_counter,
-                name=row['product_name'],
-                price=price_cents(row['product_price']),
-                quantity=row['product_quantity'],
-                updated=datetime.strptime(row['date_updated'], '%m/%d/%Y'),
-                brand_id=brand_map[row['brand_name']])
+                name=row["product_name"],
+                price=price_cents(row["product_price"]),
+                quantity=row["product_quantity"],
+                updated=datetime.strptime(row["date_updated"], "%m/%d/%Y"),
+                brand_id=brand_map[row["brand_name"]],
+            )
             session.add(new_item)
         session.commit()
 
@@ -64,8 +67,7 @@ def import_csvbrands():  # works
         for row in data:
             brand_id_counter += 1
             brand_name = row[0].strip()
-            new_item = Brands(brand_id=brand_id_counter,
-                              name=brand_name)
+            new_item = Brands(brand_id=brand_id_counter, name=brand_name)
             session.add(new_item)
             brand_map[brand_name] = brand_id_counter
         session.commit()
@@ -88,16 +90,18 @@ def run_app():
             # test it exist / addd
             statement = "select max(id) from product"
             num = engine.execute(statement).fetchall()[0][0]
-            statement = f"select brand_id from brands where name = " \
-                        f"'{brand_name.strip()}'"
+            statement = (
+                f"select brand_id from brands where name = " f"'{brand_name.strip()}'"
+            )
             brand_id = engine.execute(statement).fetchall()[0][0]
-            new_item = Product(id=num + 1,
-                               name=product_name,
-                               price=price_cents(product_price),
-                               quantity=product_quantity,
-                               updated=datetime.datetime.strptime(date_updated,
-                                                                  '%m/%d/%Y'),
-                               brand_id=brand_id)
+            new_item = Product(
+                id=num + 1,
+                name=product_name,
+                price=price_cents(product_price),
+                quantity=product_quantity,
+                updated=datetime.datetime.strptime(date_updated, "%m/%d/%Y"),
+                brand_id=brand_id,
+            )
             session.add(new_item)
             session.commit()
             # something goes in here to deal with errors
@@ -107,13 +111,14 @@ def run_app():
             # Prompt for product id #### TODO
             ## also brancd id generated in db
 
-            statement = "select product.name, product.price, brands.name as " \
-                        "brand from brands join product " \
-                        "on brands.brand_id = product.brand_id"
+            statement = (
+                "select product.name, product.price, brands.name as "
+                "brand from brands join product "
+                "on brands.brand_id = product.brand_id"
+            )
             products = engine.execute(statement).fetchall()
             for product in products:
-                print(
-                    f"{product.name}  |  {product.price}  |  {product.brand}")
+                print(f"{product.name}  |  {product.price}  |  {product.brand}")
             input("Press enter to return to main menu")
         elif choice == "a":
 
@@ -121,27 +126,39 @@ def run_app():
             most_expensive_item = engine.execute(statement).fetchall()[0][0]
             statement = "select min(price) from product"
             least_expensive_item = engine.execute(statement).fetchall()[0][0]
-            statement = "select brands.name from brands join product  on " \
-                        "brands.brand_id = product.brand_id " \
-                        "group by brands.name order by count(*) desc limit 1"
+            statement = (
+                "select brands.name from brands join product  on "
+                "brands.brand_id = product.brand_id "
+                "group by brands.name order by count(*) desc limit 1"
+            )
             most_common = engine.execute(statement).fetchall()[0][0]
-            print(f"""
+            print(
+                f"""
                   The most expensive item is:\t{most_expensive_item}
                   The least expensive item is:\t {least_expensive_item}
-                  The most common brand is:\t\t{most_common}""")
+                  The most common brand is:\t\t{most_common}"""
+            )
         elif choice == "b":
             with open(f"{FILE_PATH}backup_inventory.csv", "w") as csvfile1:
-                fieldnames = ['product_id', 'product_name', 'product_price',
-                              'product_quantity', 'date_updated', 'brand_id']
+                fieldnames = [
+                    "product_id",
+                    "product_name",
+                    "product_price",
+                    "product_quantity",
+                    "date_updated",
+                    "brand_id",
+                ]
                 backup_writer = csv.DictWriter(csvfile1, fieldnames=fieldnames)
                 backup_writer.writeheader()
-                statement = "SELECT id, name, price, quantity, updated, " \
-                            "brand_id FROM product"
+                statement = (
+                    "SELECT id, name, price, quantity, updated, "
+                    "brand_id FROM product"
+                )
                 results = engine.execute(statement).fetchall()
                 for row in results:
                     csvfile1.write(
-                        f"{row[0]},{row[1]},{row[2]},{row[3]},{row[4]},"
-                        f"{row[5]}\n")
+                        f"{row[0]},{row[1]},{row[2]},{row[3]},{row[4]}," f"{row[5]}\n"
+                    )
                 print("Backup database created.")
 
 

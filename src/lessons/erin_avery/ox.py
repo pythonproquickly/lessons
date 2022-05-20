@@ -1,18 +1,18 @@
 # XXX and OOO
 
 board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
 ]
 
 # example only - comment this out
 # X in middle top row
 
 # O in last column of bottom row
-board[2][0] = 'O'
-board[1][1] = 'O'
-board[0][2] = 'O'
+board[2][0] = "O"
+board[1][1] = "O"
+board[0][2] = "O"
 # end of comment out
 print(board)
 # check if a row wins
@@ -57,7 +57,7 @@ if not win:
             win = True
             for row in board:
                 for item in row:
-                    if item == ' ':
+                    if item == " ":
                         win = False
                         break
 print(win)

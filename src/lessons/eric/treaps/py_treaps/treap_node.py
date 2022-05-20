@@ -25,9 +25,7 @@ class TreapNode:
         right_child (TreapNode): The right child of the node.
     """
 
-    def __init__(
-            self, key: KT, value: VT, parent: "Optional[TreapNode]" = None
-    ):
+    def __init__(self, key: KT, value: VT, parent: "Optional[TreapNode]" = None):
         self.key: KT = key
         self.value: VT = value
         self.priority: int = self.get_priority()
@@ -38,7 +36,7 @@ class TreapNode:
 
     def get_priority(self):
         """Generate a new priority for a treap node.
-    
+
         Please do not touch this function, and use it on the creation of a standard treap node.
 
         Returns:

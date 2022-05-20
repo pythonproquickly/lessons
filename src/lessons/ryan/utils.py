@@ -1,24 +1,25 @@
 import urllib
 import csv
 
+
 def retrieve_data(url, fname):
     """
-    Retrieve a file from the specified url and save it in a local file 
+    Retrieve a file from the specified url and save it in a local file
     called fname.
     """
-    
+
     # grab the data and parse it
-    filedata = urllib.request.urlopen(url) 
+    filedata = urllib.request.urlopen(url)
     to_write = filedata.read()
-    
+
     # write to file
     with open(fname, "wb") as f:
         f.write(to_write)
 
-        
+
 def read_data(path):
     """
-    read downloaded data from a .csv file, and return a list of tuples. 
+    read downloaded data from a .csv file, and return a list of tuples.
     each tuple represents a link between states.
     Args:
         path: string (Path of the file in which data is present)
@@ -28,6 +29,7 @@ def read_data(path):
     with open(path, "r") as f:
         reader = csv.reader(f)
         return [(row[0], row[1]) for row in list(reader)]
+
 
 def describe(data, n):
     """

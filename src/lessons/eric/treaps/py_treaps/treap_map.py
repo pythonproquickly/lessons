@@ -45,4 +45,4 @@ class TreapMap(Treap[KT, VT]):
 
 
 treap_map = TreapMap()
-assert (isinstance(treap_map, TreapMap))
+assert isinstance(treap_map, TreapMap)

@@ -12,7 +12,6 @@ overstock_items = [
     ["coats", 34.00],
     ["long socks", 4.05],
     ["jumpers", 28.00],
-
 ]
 
 split_prices = deque()
@@ -23,7 +22,7 @@ for item in overstock_items:
     else:
         split_prices.appendleft(item)
 
-ClothesBundle = namedtuple('ClothesBundle', ['bundle_items', 'items_price'])
+ClothesBundle = namedtuple("ClothesBundle", ["bundle_items", "items_price"])
 bundles = []
 
 while len(split_prices) >= 5:

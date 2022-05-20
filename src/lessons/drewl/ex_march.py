@@ -1,5 +1,6 @@
 # 3/10/2022
 
+
 def main():
     print("Running main program.\n")
 
@@ -54,7 +55,9 @@ while True:
     user = input("Enter your name: ").lower()
     age = int(input("Enter your age: "))
     gen = generation_finder(age)
-    user_info = f"Hello {user.title()}, you are {age} years old and you belong to {gen}."
+    user_info = (
+        f"Hello {user.title()}, you are {age} years old and you belong to {gen}."
+    )
     print(user_info)
 
     ask = input("Do you want to enter another person's age(y/n)? ").lower()

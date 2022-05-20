@@ -19,9 +19,11 @@ class Brands(Base):
     products = relationship("Product", backref="Brands")
 
     def __repr__(self):
-        return f"Product Name: {self.name} Price: {self.price} " \
-               f"Quantity: {self.quantity} Updated: {self.updated} " \
-               f"Brand: {self.brand}"
+        return (
+            f"Product Name: {self.name} Price: {self.price} "
+            f"Quantity: {self.quantity} Updated: {self.updated} "
+            f"Brand: {self.brand}"
+        )
 
 
 class Product(Base):

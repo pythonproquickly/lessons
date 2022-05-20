@@ -1,6 +1,6 @@
 def find(query, data):
-    selects = query['select']
-    displays = query['display']
+    selects = query["select"]
+    displays = query["display"]
     for number, line in enumerate(data):
         dictified_line = dictify(line)
         match = False
@@ -38,11 +38,11 @@ def find(query, data):
 
         print_line = {}
         if match:
-            sort_needed = query.get('sort', '')
-            if displays != ['Z']:
+            sort_needed = query.get("sort", "")
+            if displays != ["Z"]:
                 # print(number + 1, "SPECIFIC COLS", dictified_line, displays)
                 for key, value in dictified_line.items():
-                    for column in ''.join(displays).replace(" ", ""):
+                    for column in "".join(displays).replace(" ", ""):
                         if key == column:
                             print_line[key] = value
                 if print_line != {}:
@@ -70,7 +70,7 @@ def find(query, data):
 
 def sort(sort_type, source):
     destination = {}
-    if sort_type[-2:] == '-1':
+    if sort_type[-2:] == "-1":
         for column in sorted(source, key=source.get, reverse=True):
             destination[column] = source[column]
     else:
@@ -91,12 +91,12 @@ def dictify(data_with_colons):
     return results
 
 
-with open('data.txt') as f:
+with open("data.txt") as f:
     data = f.read().splitlines()
 
 queries = {}
 query_num = 0
-with open('final.txt') as f:
+with open("final.txt") as f:
     read_ahead_in_sort = False
     while True:
         if not read_ahead_in_sort:
@@ -109,31 +109,29 @@ with open('final.txt') as f:
         if line == "FIND":
             query_num += 1
             queries[query_num] = {}
-            queries[query_num]['select'] = []
-            queries[query_num]['display'] = []
+            queries[query_num]["select"] = []
+            queries[query_num]["display"] = []
             # queries[query_num]['type'] = 'FIND'
             line = f.readline().strip()
             if line == "Y":
-                queries[query_num]['select'].append(line)
+                queries[query_num]["select"].append(line)
                 line = f.readline().strip()
             while line[2] in "<>=":
-                queries[query_num]['select'].append(line)
+                queries[query_num]["select"].append(line)
                 line = f.readline().strip()
-            queries[query_num]['display'].append(
-                line[:-1].replace(';', '').strip())
+            queries[query_num]["display"].append(line[:-1].replace(";", "").strip())
 
         elif line == "SORT":
             """query_num += 1
             line = f.readline().strip()
             queries[query_num] = {}"""
             line = f.readline().strip()
-            queries[query_num]['sort'] = []
-            queries[query_num]['sort'].append(line.replace(";", "").strip())
+            queries[query_num]["sort"] = []
+            queries[query_num]["sort"].append(line.replace(";", "").strip())
             line = f.readline().strip()
             if line == "SORT":
                 line = f.readline().strip()
-                queries[query_num]['sort'].append(
-                    line.replace(";", "").strip())
+                queries[query_num]["sort"].append(line.replace(";", "").strip())
             else:
                 read_ahead_in_sort = True
         else:

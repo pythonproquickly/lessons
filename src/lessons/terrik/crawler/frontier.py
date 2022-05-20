@@ -5,6 +5,7 @@ import pickle
 
 logger = logging.getLogger(__name__)
 
+
 class Frontier:
     """
     This class acts as a representation of a frontier. It has method to add a url to the frontier, get the next url and
@@ -22,7 +23,6 @@ class Frontier:
     URL_QUEUE_FILE_NAME = os.path.join(".", FRONTIER_DIR_NAME, "url_queue.pkl")
     URL_SET_FILE_NAME = os.path.join(".", FRONTIER_DIR_NAME, "url_set.pkl")
     FETCHED_FILE_NAME = os.path.join(".", FRONTIER_DIR_NAME, "fetched.pkl")
-
 
     def __init__(self):
         self.urls_queue = deque()
@@ -73,20 +73,27 @@ class Frontier:
         """
         loads the previous state of the frontier into memory, if exists
         """
-        if os.path.isfile(self.URL_QUEUE_FILE_NAME) and os.path.isfile(self.URL_SET_FILE_NAME) and\
-                os.path.isfile(self.FETCHED_FILE_NAME):
+        if (
+            os.path.isfile(self.URL_QUEUE_FILE_NAME)
+            and os.path.isfile(self.URL_SET_FILE_NAME)
+            and os.path.isfile(self.FETCHED_FILE_NAME)
+        ):
             try:
                 self.urls_queue = pickle.load(open(self.URL_QUEUE_FILE_NAME, "rb"))
                 self.urls_set = pickle.load(open(self.URL_SET_FILE_NAME, "rb"))
                 self.fetched = pickle.load(open(self.FETCHED_FILE_NAME, "rb"))
-                logger.info("Loaded previous frontier state into memory. Fetched: %s, Queue size: %s", self.fetched,
-                            len(self.urls_queue))
+                logger.info(
+                    "Loaded previous frontier state into memory. Fetched: %s, Queue size: %s",
+                    self.fetched,
+                    len(self.urls_queue),
+                )
             except:
                 pass
         else:
-            logger.info("No previous frontier state found. Starting from the seed URL ...")
+            logger.info(
+                "No previous frontier state found. Starting from the seed URL ..."
+            )
             self.add_url("http://www.ics.uci.edu/")
 
     def __len__(self):
         return len(self.urls_queue)
-
