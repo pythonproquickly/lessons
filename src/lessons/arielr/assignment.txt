@@ -1,9 +1,0 @@
-AR
-implement a simple HTTP client and server. The client will be able to GET
-correctly from the web server. The test setup will be two VMs, one server and
-one(or more) client. Each test will use your client, and your server. Your
-client doesn’t have to support caching or recursively retrieving embedded
-objects. HTTP uses TCP, you can use the textbook code as a base. Your server
-must support concurrent connections: if one client is downloading a 100MB
-object, another client that comes looking for a 1KB object shouldn’t have to
-wait for the first to finish.
