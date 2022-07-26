@@ -1,4 +1,0 @@
-dogs = combined[combined['animal_type'] == 'Dog']
-adopted = dogs[dogs['outcome_type'] == 'Adoption']
-result = adopted.groupby('breed')['id'].count().sort_values(ascending=False)
-result.head(5)
