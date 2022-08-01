@@ -1,4 +1,5 @@
-"""
-Write a chatbot that responds to key words in certain questions.
-It runs until you say bye
-"""
+
+numbers = [1, 2, 3]
+numbers_copy = numbers.copy()
+numbers_copy.append(999999)
+print(numbers)
