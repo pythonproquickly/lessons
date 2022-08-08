@@ -27,7 +27,7 @@
 Contributing
 ============
 
-Welcome to ``andykmiles`` contributor's guide.
+Welcome to ``clients-ctpsws`` contributor's guide.
 
 This document focuses on getting any potential contributor familiarized
 with the development processes, but `other kinds of contributions`_ are also
@@ -46,7 +46,7 @@ guidelines.
 Issue Reports
 =============
 
-If you experience bugs or general issues with ``andykmiles``, please have a look
+If you experience bugs or general issues with ``clients-ctpsws``, please have a look
 on the `issue tracker`_. If you don't see anything useful there, please feel
 free to fire an issue report.
 
@@ -65,10 +65,10 @@ you help us to identify the root cause of the issue.
 Documentation Improvements
 ==========================
 
-You can help improve ``andykmiles`` docs by making them more readable and coherent, or
+You can help improve ``clients-ctpsws`` docs by making them more readable and coherent, or
 by adding missing information and correcting mistakes.
 
-``andykmiles`` documentation uses Sphinx_ as its main documentation compiler.
+``clients-ctpsws`` documentation uses Sphinx_ as its main documentation compiler.
 This means that the docs are kept in the same repository as the project code, and
 that any documentation update is done in the same way was a code contribution.
 
@@ -80,7 +80,7 @@ that any documentation update is done in the same way was a code contribution.
 
    .. tip::
       Please notice that the `GitHub web interface`_ provides a quick way of
-      propose changes in ``andykmiles``'s files. While this mechanism can
+      propose changes in ``clients-ctpsws``'s files. While this mechanism can
       be tricky for normal code contributions, it works perfectly fine for
       contributing to the docs, and can be quite handy.
 
@@ -131,8 +131,8 @@ This can easily be done via either |virtualenv|_::
 
 or Miniconda_::
 
-    conda create -n pyscaffold python=3 six virtualenv pytest pytest-cov
-    conda activate pyscaffold
+    conda create -n clients-ctpsws python=3 six virtualenv pytest pytest-cov
+    conda activate clients-ctpsws
 
 Clone the repository
 --------------------
@@ -142,14 +142,14 @@ Clone the repository
    page. This creates a copy of the code under your account on |the repository service|.
 #. Clone this copy to your local disk::
 
-    git clone git@github.com:YourLogin/andykmiles.git
-    cd andykmiles
+    git clone git@github.com:YourLogin/clients-ctpsws.git
+    cd clients-ctpsws
 
 #. You should run::
 
     pip install -U pip setuptools -e .
 
-   to be able run ``putup --help``.
+   to be able to import the package under development in the Python REPL.
 
    .. todo:: if you are not using pre-commit, please remove the following item:
 
@@ -158,7 +158,7 @@ Clone the repository
     pip install pre-commit
     pre-commit install
 
-   ``andykmiles`` comes with a lot of hooks configured to automatically help the
+   ``clients-ctpsws`` comes with a lot of hooks configured to automatically help the
    developer to check the code being written.
 
 Implement your changes
@@ -168,7 +168,7 @@ Implement your changes
 
     git checkout -b my-feature
 
-   and start making changes. Never work on the master branch!
+   and start making changes. Never work on the main branch!
 
 #. Start your work on this branch. Don't forget to add docstrings_ to new
    functions, modules and classes, especially if they are part of public APIs.
@@ -220,7 +220,7 @@ Submit your contribution
 
    .. todo:: if you are using GitHub, you can uncomment the following paragraph
 
-      Find more detailed information `creating a PR`_. You might also want to open
+      Find more detailed information in `creating a PR`_. You might also want to open
       the PR as a draft first and mark it as ready for review after the feedbacks
       from the continuous integration (CI) system or any required fixes.
 
@@ -285,7 +285,7 @@ Releases
 
 If you are part of the group of maintainers and have correct user permissions
 on PyPI_, the following steps can be used to release a new version for
-``andykmiles``:
+``clients-ctpsws``:
 
 #. Make sure all unit tests are successful.
 #. Tag the current commit on the main branch with a release tag, e.g., ``v1.2.3``.
@@ -314,8 +314,8 @@ on PyPI_, the following steps can be used to release a new version for
 .. |the repository service| replace:: GitHub
 .. |contribute button| replace:: "Create pull request"
 
-.. _repository: https://github.com/<USERNAME>/andykmiles
-.. _issue tracker: https://github.com/<USERNAME>/andykmiles/issues
+.. _repository: https://github.com/<USERNAME>/clients-ctpsws
+.. _issue tracker: https://github.com/<USERNAME>/clients-ctpsws/issues
 .. <-- end -->
 
 
@@ -326,8 +326,8 @@ on PyPI_, the following steps can be used to release a new version for
 
 .. _black: https://pypi.org/project/black/
 .. _CommonMark: https://commonmark.org/
-.. _contribution-guide.org: http://www.contribution-guide.org/
-.. _creating a PR: https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+.. _contribution-guide.org: https://www.contribution-guide.org/
+.. _creating a PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 .. _descriptive commit message: https://chris.beams.io/posts/git-commit
 .. _docstrings: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
 .. _first-contributions tutorial: https://github.com/firstcontributions/first-contributions
@@ -345,9 +345,9 @@ on PyPI_, the following steps can be used to release a new version for
 .. _Python Software Foundation's Code of Conduct: https://www.python.org/psf/conduct/
 .. _reStructuredText: https://www.sphinx-doc.org/en/master/usage/restructuredtext/
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
-.. _tox: https://tox.readthedocs.io/en/stable/
+.. _tox: https://tox.wiki/en/stable/
 .. _virtual environment: https://realpython.com/python-virtual-environments-a-primer/
 .. _virtualenv: https://virtualenv.pypa.io/en/stable/
 
-.. _GitHub web interface: https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository
-.. _GitHub's code editor: https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository
+.. _GitHub web interface: https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files
+.. _GitHub's code editor: https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files

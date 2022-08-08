@@ -1,5 +1,5 @@
 """
-    Dummy conftest.py for andykmiles.
+    Dummy conftest.py for clients_ctpsws.
 
     If you don't know what this is for, just leave it empty.
     Read more about conftest.py under:
