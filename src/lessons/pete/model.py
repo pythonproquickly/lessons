@@ -20,13 +20,13 @@ class Making(BaseModel):
     making_name = pw.CharField()
     initial_grape_weight = pw.CharField()
     crush_date = pw.CharField()
-
-
+        
 
 class Bin(BaseModel):
     """THis represents a bin where wine is fermented for a single making. Note there may be several bins for a making"""
     making = pw.ForeignKeyField(Making, backref='bins')
     gallons = pw.CharField()
+    ph_level = pw.CharField() # moved from msmt - Making?
 
 
 class MakingBinMeasurment(BaseModel):
@@ -34,7 +34,7 @@ class MakingBinMeasurment(BaseModel):
     bin = pw.ForeignKeyField(Bin, backref='msmt') # fk
     measurement_date = pw.CharField()
     temperature = pw.CharField()
-    ph_level = pw.CharField()
+
     birx = pw.CharField()
     ta = pw.CharField()
     measured_by_name = pw.CharField()
