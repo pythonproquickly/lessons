@@ -1,0 +1,10 @@
+DEBUG :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 1
+INFO :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 1
+DEBUG :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 3
+INFO :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 3
+DEBUG :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 5
+INFO :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 5
+DEBUG :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 7
+INFO :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 7
+DEBUG :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 9
+INFO :: __main__ :: autompgNEWESTFINALDRAFT2 :: odd number encountered: 9
