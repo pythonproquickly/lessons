@@ -54,3 +54,6 @@ MANIFEST
 venv/
 *.gz
 *.csv
+.aws/
+src/lessons/samuelo/.ipynb_checkpoints
+src/lessons/samuelo/data

@@ -33,7 +33,7 @@ import pandas as pd
 
 
 logger.add("./apachexvt_{time}.log")
-PATH = '/Users/andy/ws/ctpsws-clients/lessons/src/lessons/samuelo/data/'
+PATH = '/Users/andy/ws/ctpsws-clients/lessons/src/lessons/samuelo_DNU/data/'
 OUTPUT_FILE = PATH + "log_summary.csv"
 START_YMD = '2021-08-01'
 STOP_YMD = '2022-07-31'
@@ -46,7 +46,7 @@ import os
 import calendar
 import datetime
 from loguru import logger
-PATH = '/Users/andy/ws/ctpsws-clients/lessons/src/lessons/samuelo/data/'
+PATH = '/Users/andy/ws/ctpsws-clients/lessons/src/lessons/samuelo_DNU/data/'
 OUTPUT_FILE = PATH + "log_summary.csv"
 START_YMD = '2021-08-01'
 STOP_YMD = '2022-07-30'
