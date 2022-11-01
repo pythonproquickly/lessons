@@ -1,3 +1,7 @@
+import pysnooper
+
+
+@pysnooper.snoop()
 def bubble_sort(array):
     n = len(array)
     for i in range(n):

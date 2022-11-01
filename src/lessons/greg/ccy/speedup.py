@@ -2,9 +2,9 @@
 performance analysis
 try with and without speedy decorator and compare!!
 """
+import csv
 import functools
 import time
-import csv
 
 
 def timer(func):
