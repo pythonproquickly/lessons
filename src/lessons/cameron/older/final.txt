@@ -1,0 +1,6 @@
+Introduction to Python;
+Software Development.	Data Types, Values and Variables.	Download
+Expressions and Arithmetic.	Download
+Conditional Execution	Download
+Iterations.	Download
+Functions.
