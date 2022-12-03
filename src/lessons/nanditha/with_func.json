@@ -1,0 +1,6 @@
+{
+    "001": {
+        "name": "calculation",
+        "f": "def calculate(x, y):\n                   return 4 * (x + y) / 10"
+    }
+}

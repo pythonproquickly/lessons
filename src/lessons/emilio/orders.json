@@ -1,0 +1,33 @@
+[
+    {
+        "1435": {
+            "date": "01/02/2022",
+            "customer": "Andy",
+            "product": "widget",
+            "price": 10.12
+        }
+    },
+    {
+        "2001": {
+            "date": "01/03/2022",
+            "customer": "Fred",
+            "product": "box",
+            "price": 200.45
+        }
+    },
+    {
+        "1435": {
+            "date": "01/05/2022",
+            "price": 9.2,
+            "discount": true
+        }
+    },
+    {
+        "1446": {
+            "date": "01/02/2022",
+            "customer": "Sue",
+            "product": "ball",
+            "price": 15.1
+        }
+    }
+]

@@ -1,0 +1,14 @@
+{
+  "John Doe": {
+    "department": "Marketing",
+    "place": "Remote"
+  },
+  "Jane Doe": {
+    "department": "Software Engineering",
+    "place": "Remote"
+  },
+  "Don Joe": {
+    "department": "Software Engineering",
+    "place": "Office"
+  }
+}
